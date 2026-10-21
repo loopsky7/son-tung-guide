@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Sơn Tùng"><meta name="theme-color" content="#0b0b16">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="apple-touch-icon" href="data:image/png;base64,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"><link rel="icon" type="image/png" href="data:image/png;base64,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"><link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22S%5Cu01a1n%20T%5Cu00f9ng%20M-TP%20guide%22%2C%20%22short_name%22%3A%20%22S%5Cu01a1n%20T%5Cu00f9ng%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%230b0b16%22%2C%20%22theme_color%22%3A%20%22%230b0b16%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAALVklEQVR42u2dWWwbxx3GZ3aX4nLJXZGSLFKWJdtRZJuWXTuH5QRtjAa5baBBg6JFiqBNgAB9KBqgfUiLAkEfWqBx0aAHiiII8pC2QfMUJAXquDmaw45rJJEdO7EVXXZkyqYOnuKxF7ncPkixLYsiaZKidunvB76IHC1nZ/77zTf/Wc5S8%2BF/EACKwZloA7BycFC0AoBygOsMDgLlAFAOAM8BoBwAngNAOQA8B4ByAHgOAOUAN25wUCgHKA6DJgCYrQB4DgDlAPAcAMoB4DkAlAPAcwAoB4DnAGBZcGBVFkA5QBXBgVVZAOUA8BwAygEaEhxQDgDlAPAcAMoB4DnA2oFVWQDlAPAcAMoB4DnAGisHVmUBPAeA5wD1Cw6kzwGGFYBhBWAqC6AcAJ4DQDmA7aaydnNJPOvsE/k%2Bie8THQEXI3CswDFujjDU1I2CVjA1w5jP5aJqPqbmo5oelrULmXxMQ2c3s3IIA97We9eLd66jjuI%2Bmro4xkUIIQ6/i98iXf2RkclpF7LqREoZTspfzBey%2BZW%2BpfvnOz2DHWt4mpcOfp75OArPUSn8Zk/gx0F%2Bs6fqI7AehzDgFQa85OFeYprahezMC2PK6Lw1z9eEclQ2itB139vU/u1eytavnpQ6N3m4dbw5mrJgx5iEWqRTOCvHBmVp988GxL2rJvK04jcbetpWWdKwtHIEntyyepFhnQvUusphWc8h7unw3dd1Iwzty2tlFc9hzVVZytLA430NUXALjisWqYNVlUO6o6PFz6/JBWqFBsFspRStd/krKZYdnk%2BfiMvj6VxUy6dzpl4gDGXdHCuwrORwdgv8BsG5QRD6RdazPN0Hz2FD5aAM9Qy0li6jz6mhP4zI4%2BlrPzDMQlLPJQkJK9mR1GWR5je6PTu8nh1ecZd3IYe2knJMHhyuvKquTe7%2B399auowWVkafGiI2xIqew7leYFxsqWsrb375m7NaWKm08iZRJ2V1Uo7%2BO8y6WGlvu/fr68y8WY9zp3UtZrHgsKByOMq5jdSJuBpWqjt4XjHi78/F359rpDmw6dK3FT0H63GULqCGFYtUu8JqmFCO%2BlWqTFNyksMi1W5y5bDgcGjIRukC3r3t4ZdD%2BXTOPgkJWyoHY37l263zyqfz5cYd7uZfbed7BSvUtsKEih1fVvQc6rRayRwy%2BNzu1GfJxP9iqdPzelSzsnLY1XNYsNp6XNemVWcXX7ZfpF1eaZeXEJKL69mJTPZcRp7IZM9ljWweo0pzzlYIIcmTCf%2BB61h1c7S1eAfbvINti3mnWS07ns6MZtJn55UpZfXqidnKGjBzaKbzwUDVN/g4/U6n39n2jQ5CiB7TEx/F48eimbEMZivNoBxaRI%2B8M9f5gL/2Q7W0t/j3B/z7A3JInn59On4sZhbMxgYHtalyWPcXb6G/hbLns3U8oNAr9D3VN3Bwh6ffQ0BlU1lqzZeRM8d%2BN65crLNjEDYJwV9v9x/oqlc9K/QcdnwxVp5nazH9zC%2BHE0PJOs8wWLrx8V7/fn8DkhzIc6wieaUwcnC8ba9v42M9fMBZxyNv/EFvdlJJDacxW7Gf57ia%2BEeJUz/9fPzP51Nn0/Wy/pSlm5/ciB%2BD2m%2B2UuTiy5PI0XjkaJz3O323e707JWm7hy1520d5/9Hj8u3xxT9OQjnslOcogTKrKYdmw4dmKUvdmwVxi1vs90hb3c511Qw6nXd3xGoKjqbOc9h3TzDTIJkJOTMhT5MIIaTF65AGRO8OsW1Pq6PVUeFBpKBIKK2h93AnmB3QkrnIsXjkWJy8QHy7pJ5HuqRg%2BXwG52ZdG1xytSl2ZEhtJykkfiodP5XueSSw6dH1ZYs7fA5zSl3l4LCpcjSvXQ%2B9NiMFPW27pTJNINbQCBXe4GzTVdnm3od07ki8bHCwLraGRqCVlYHnsOLURi9bpqCbVTdC5XeCwXPUjV3P9H35ynRqQq7xOAxfPhGSk42qGwF5jjXAt1P07RRjJ1IXXp%2BdH61%2Bbda7o/yERY3mVlU5kOdYFdpvk9pvk1Lj8qW3YnPHkwW9cF3/zne2dD9QZnsPs2AqM/oqew4b5zmsXm%2BpX5D6hf4n1keHUnPH5xNnMoZWPkq8QffAU72cUGZYyYbUvFb97yIxrFijogIb2OcL7PMV8mZqXE5NyOlJVZnR1FguLxsFrUA5ygmsEHCKN7s6B1u9QXclh42eTDegBTCsNAiGo96gu8K%2BL9tpM0eTDWkBKIfdiJxMZS5pDZAETGVtRiFnjv19tsbTr%2BTfTXgO2zHy0nR2utbfyWEq24ScfzVy8e0ENm8ppxyWrHb0VKZ9p7ueuxZ/haEXRl6aufjfRF36y2zuhTdrDodDvw05PKx/UAzcIbXvqFuUzH6SHn15Vq4p61WFJFB4jjqjZ4ypd5NT7yY5gfFtE9qC7rag0HoTX0WgqLHc7Mfp0NuJGucmN5rnoG98d9hG1WWdjKfH6Q60uLta3F0trk4HJzAcz7A8w/EMobSQK%2BTVgp4ytHg%2BO62lQ1piVMlc0gieSNX0s5W8VkhOKMkJBT2HPAdYS/DoUADlAE3vOQCUA8BzACgHgOcAUA5w4wQHYgNAOQA8B6jnsALlAFAOAM8BoBwAngNAOQA8B4ByAHiORjP4o7a%2Bu5fs1JMM5Q4/Pb28JOugD/%2B12ykuuSHh9CvJ4X%2BlVjr4t/6y3t3BXVd9Jt7JfPJivGjFFjBNklcKSsKIn9dDx%2BXwp4ppQjkahbfX0TnAz569dhfRjXe5r4kMsjobt5U%2BIKXEITAOgZG6HZvuckfHtA//FJVjhl2al7HRs2GKitzW/eLyklsfEot2Vo3P1CkWbStWbDkdW5z3PONnnbZpc9uvynbf6vL4uczclWeFBnby3p5ie5%2BX7MTXf3Lt8LTnCd%2BW%2B68MFkeei04NKUWOuYz3no2ET6uEEKfEdO923f5Dr0NYlDExwG07IJ55LQXlqPuruHRvfXCJeGwrLhtXLvTqvq6KkmrKPHdEPvnP%2Bas/7RkU8BivVX8weHR8cQPavm8KnIsulPEEuO7di08rjozrRW1HdV9XdcnwZ0t%2BoCt2snZpcBt7juHDi8%2BJdbiYm/Z5FsoEHxIvl/rijUzFl375ryshPMtGl9K6YpvnAdr47vOpITUTWXT%2B2x50E0paBKZvn7DwztyIHpvMWaGe67%2B25LnrmTnbzFbslCG95hI0CmTkzeztj0mEECnAde92tXZzHE8v68ryU7uukzWLTXYqKXl5EzCnyGy4hb/1%2B0t25g99otqlze2d5xh7T971HdHBU0LI9gNu0b%2BYxcpEjAtDqtjJrZTnuPPJ1q33FNms8sPnkxMfyCv72Yq49xftK32UnjPOvpExoRyrrRwmoZpsThxRgvcLhJCugSvPePvizWyhsPxCv/oduvK30KIyY1asHCsROZd7/48JXSV2yUpzxOYMH84G7xOubu2cao69J1sknHOqKSeM6Pnc5Efq1AnVdulzG2XBll/KZH7GmDql9dxyRTbGP1A0eUEniluBEtd6yWxpqY%2Bu/uOtZxMXT2tliyE4VvWyXOz%2BM4flK8FhkrP/kRdOqsSwcuzF9LEX06V7ukRsVZJWJ/anGX5IHf5cT0wtps9Dn2qpGYMAGNLL77z6dLzYpU9ru6CrNKSmbfeWbJ6pbNm5pVnttKLyA9Ze0trBQe2jHEuralJaemfgInNRWn0SzKQr/nuxisFzgKaGPv9oBK0Ams1zAMxWADwHgHIAeA7QFMGBH1IDKAeA5wBQDgDPAaAcwKLBQaEcAMoB4DkAlAM0IjigHKA4WJUFUA4AzwGgHACeA0A5ADwHgHIAeA5wAygHVmUBPAe47uDAqiyAcgDMVgCUA8BzACgHgOcAUA4AzwGgHACeA4Br%2BT9ZpBTmwyQhdQAAAABJRU5ErkJggg%3D%3D%22%2C%20%22sizes%22%3A%20%22180x180%22%2C%20%22type%22%3A%20%22image/png%22%7D%5D%7D">
+<title>Sơn Tùng M-TP: the guide</title><style>
+:root{--bg:#0b0b16;--bg2:#14142a;--card:#1b1b36;--tx:#ecebff;--mut:#a9a8cc;--a1:#ff4fa3;--a2:#7c5cff;--a3:#22d3ee;--a4:#facc15}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;color:var(--tx);background:radial-gradient(1200px 600px at 10% -10%,#3b1760 0,transparent 60%),radial-gradient(900px 500px at 110% 10%,#0e4a6b 0,transparent 55%),var(--bg);background-attachment:fixed}
+a{color:var(--a3);text-decoration:none;border-bottom:1px dotted rgba(34,211,238,.5)}a:hover{color:#fff;border-bottom-color:#fff}
+header.hero{padding:42px 20px 26px;text-align:center}
+header.hero h1{margin:0;font-size:clamp(30px,6vw,56px);line-height:1.1;background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
+header.hero p{color:var(--mut);margin:.6em auto 0;max-width:760px}
+.wrap{display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;max-width:1240px;margin:0 auto;padding:0 18px 60px}
+nav.toc{position:sticky;top:14px;align-self:start;max-height:calc(100vh - 28px);overflow:auto;background:rgba(27,27,54,.85);backdrop-filter:blur(8px);border:1px solid #2c2c55;border-radius:16px;padding:14px}
+nav.toc b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:0 0 8px 6px}
+nav.toc a{display:block;padding:7px 10px;border-radius:10px;border:0;color:var(--tx);font-size:14.5px}
+nav.toc a:hover,nav.toc a.on{background:linear-gradient(90deg,rgba(255,79,163,.25),rgba(124,92,255,.25))}
+main section{background:rgba(20,20,42,.78);border:1px solid #2a2a52;border-radius:20px;padding:22px 24px;margin:0 0 22px;scroll-margin-top:70px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+main section>h2{margin:0 0 12px;font-size:clamp(22px,3.4vw,30px);display:flex;gap:10px;align-items:center}
+main section>h2 .em{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--a1),var(--a2));font-size:22px}
+h3{color:var(--a4);margin:1.3em 0 .4em;font-size:19px}h4{color:#ffb3d9;margin:1.2em 0 .3em;font-size:16.5px;scroll-margin-top:70px}
+ul,ol{padding-left:1.3em}li{margin:.25em 0}li>p.cont{margin:.4em 0}
+strong{color:#fff}em{color:#d9d6ff}
+.tw{overflow-x:auto;margin:10px 0;border-radius:12px;border:1px solid #2c2c55}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th{background:linear-gradient(90deg,#2a1d55,#1d2c55);text-align:left;position:sticky;top:0}
+th,td{padding:8px 10px;border-bottom:1px solid #2a2a50;vertical-align:top}tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+.note{color:var(--mut);background:rgba(124,92,255,.08);border-left:3px solid var(--a2);padding:8px 14px;border-radius:8px}
+.flag{font-weight:700;font-size:.85em;padding:1px 6px;border-radius:6px;white-space:nowrap}
+.flag.unv{background:rgba(250,204,21,.18);color:#fde68a}.flag.rum{background:rgba(255,79,163,.2);color:#ffb3d9}.flag.nf{background:rgba(148,163,184,.2);color:#cbd5e1}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.badge.ruled{background:#7f1d1d;color:#fecaca}.badge.settled{background:#14532d;color:#bbf7d0}.badge.accusation{background:#78350f;color:#fde68a}.badge.unresolved{background:#334155;color:#e2e8f0}
+.legend{font-size:14px;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:12px 0}
+.card{background:var(--card);border:1px solid #2f2f5c;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
+.card:hover{transform:translateY(-3px);border-color:var(--a1)}
+.thumb{position:relative;display:block;border:0;aspect-ratio:16/9;background:#000}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;right:10px;bottom:10px;background:rgba(255,79,163,.9);color:#fff;border-radius:999px;width:34px;height:34px;display:grid;place-items:center;font-size:14px}
+.cb{padding:10px 12px;font-size:14px}.ct{font-weight:600;margin-bottom:4px}.cf{color:var(--mut)}.lbl{color:var(--a4);font-weight:600}
+details{margin:10px 0}summary{cursor:pointer;color:var(--a3)}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:10px 0 40px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);padding:0 10px 40px}
+nav.toc{top:0;z-index:5;border-radius:0 0 14px 14px;display:flex;gap:4px;overflow-x:auto;white-space:nowrap;padding:8px;margin:0 -10px}
+nav.toc b{display:none}nav.toc a{display:inline-block;font-size:13.5px;padding:6px 10px}
+main section{padding:16px 14px}}
+</style></head>
+<body><header class="hero"><h1>Sơn Tùng M-TP: the guide</h1><div class="note" style="max-width:820px;margin:14px auto 0;text-align:left"><p><em>Compiled 21 Oct 2026. Every link was checked and loaded on that date. <strong><span class="flag unv">[Unverified]</span></strong> marks claims I couldn't confirm in a second source.</em></p><p><em>Compiled 21 Oct 2026. Every link was checked and loaded on that date (HTTP 200, or confirmed via fetch for sites that block scripted requests). Live numbers carry the date they were read. Tags: <strong><span class="flag unv">[Unverified]</span></strong> = only one weak or wiki source; <strong><span class="flag rum">[Rumour]</span></strong> = the source itself says it is unconfirmed.</em></p><p><em>Compiled 21 Oct 2026.</em></p>
+<ul><li>
+<strong>How the videos were checked:</strong> each one was confirmed to exist through YouTube oEmbed (title and channel match). View counts were read on 21 Oct 2026.
+</li><li>
+<strong>How the articles were checked:</strong> each one loaded (HTTP 200, or was read in full with a fetch tool).
+</li><li>
+<strong>Tags:</strong> <strong><span class="flag unv">[Unverified]</span></strong> = from one weak source; <strong><span class="flag rum">[Rumour]</span></strong> = the source itself says it is unconfirmed.
+</li><li>
+<strong>Disclaimer:</strong> this is general information, not legal advice.
+</li></ul></div></header>
+<div class="wrap"><nav class="toc" aria-label="Contents"><b>Contents</b><a href="#qa">💬 Q&amp;A</a><a href="#career">🚀 Career</a><a href="#producers">🎛️ Producers &amp; engineers</a><a href="#videos">🎬 Videos &amp; VFX</a><a href="#styling">👔 Styling</a><a href="#fans">☁️ Fans (“Sky”)</a><a href="#songs">🏆 Top songs</a><a href="#dj">🎧 DJ sound links</a><a href="#tutorials">📺 Tutorials &amp; breakdowns</a><a href="#plagiarism">⚖️ Plagiarism cases</a><a href="#borrow">🧠 How to borrow without copying</a><a href="#unverified">❓ Unverified list</a></nav><main><section id="qa"><h2><span class="em">💬</span>Q&amp;A</h2>
+<h4 id="h-1-is-he-really-the-most-famous-vietnamese-pop-star">1. Is he really the most famous Vietnamese pop star?</h4>
+<p><strong>Mostly yes on YouTube, records and press, but not on Spotify.</strong></p>
+<ul><li>
+<strong>YouTube:</strong> His channel has <strong>11.9M subscribers and 3.74B total views</strong> (read from the <a href="https://www.youtube.com/@Sontungmtp" target="_blank" rel="noopener noreferrer">official channel</a>, 21 Oct 2026). On Soundcharts' list of <a href="https://soundcharts.com/en/artists/youtube-subscribers/country/vietnam" target="_blank" rel="noopener noreferrer">Vietnamese artists by YouTube subscribers</a> he's <strong>#1</strong> with 12M. Next are Hậu Hoàng (8.4M), Jack (6.5M), Misthy (6.4M) and Đen (5.2M) (accessed 21 Oct 2026).
+</li><li>
+<strong>First Vietnamese artist with a YouTube Diamond Play Button</strong> (10M subscribers), reached on 5 July 2022. He was also the first Vietnamese artist past 1B views (<a href="https://e.vnexpress.net/news/arts/son-tung-m-tp-first-vietnamese-artist-to-receive-youtube-diamond-play-button-4484455.html" target="_blank" rel="noopener noreferrer">VnExpress Intl, 6 Jul 2022</a>).
+</li><li>
+<strong>Spotify:</strong> He has <strong>1.9M monthly listeners</strong> (<a href="https://open.spotify.com/artist/5dfZ5uSmzR7VQK0udbAVpf" target="_blank" rel="noopener noreferrer">Spotify</a>, 21 Oct 2026). That puts him only <strong>#8</strong> among Vietnamese artists, behind HDN (3.2M), tienanh109 (3.1M), Hwungii, Dangrangto, JustaTee, GREY D and DJ VGK1 (<a href="https://soundcharts.com/en/artists/spotify-monthly-listeners/country/vietnam" target="_blank" rel="noopener noreferrer">Soundcharts</a>, accessed 21 Oct 2026). VnExpress put his lifetime Spotify streams at more than 810M (<a href="https://e.vnexpress.net/news/life/arts/pop-star-son-tung-m-tp-s-come-my-way-becomes-youtube-s-second-most-viewed-video-5079754.html" target="_blank" rel="noopener noreferrer">30 May 2026</a>).
+</li><li>
+<strong>Billboard:</strong> "Muộn Rồi Mà Sao Còn" reached <strong>#126 on the Billboard Global Excl. US chart</strong> (<a href="https://www.billboard.com/charts/billboard-global-excl-us/2021-05-15/" target="_blank" rel="noopener noreferrer">chart, week of 15 May 2021</a>). Tuổi Trẻ called him the first Vietnamese artist on that chart (<a href="https://cuoi.tuoitre.vn/muon-roi-ma-sao-con-dua-son-tung-vao-bxh-billboard-global-toan-cau-2021051153792159.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ</a>). "Đừng Làm Trái Tim Anh Đau" reached <strong>#162</strong> (<a href="https://www.billboard.com/charts/billboard-global-excl-us/2024-06-22/" target="_blank" rel="noopener noreferrer">chart, 22 Jun 2024</a>). "Making My Way" hit <strong>#1 on the Billboard Vietnam Hot 100</strong> in May 2023 (<a href="https://ngoisao.vn/dien-anh/tin-tuc-nhac/son-tung-dat-thanh-tich-an-tuong-tai-billboard-duoc-jay-park-nhan-dinh-sap-vuon-tam-quoc-te-d399463.html" target="_blank" rel="noopener noreferrer">Ngôi Sao, quoting Billboard VN, 18 May 2023</a>).
+</li><li>
+<strong>Awards:</strong> He won Best Southeast Asia Act at the 2015 MTV EMAs and was on Forbes Vietnam's 30 Under 30 in 2018 (<a href="https://e.vnexpress.net/news/arts/son-tung-m-tp-first-vietnamese-artist-to-receive-youtube-diamond-play-button-4484455.html" target="_blank" rel="noopener noreferrer">VnExpress Intl</a>).
+</li><li>
+<strong>Verdict for Quang:</strong> He's fair to call him the biggest single name, judging by YouTube and media records. On Spotify, though, he's one of a pack, with a newer rap and indie generation ahead of him. I found no social-follower figure I could source and date, so I left that out.
+</li></ul>
+<h4 id="h-3-come-my-way-with-tyga-is-it-real-and-is-it-amapiano">3. "Come My Way" with Tyga: is it real, and is it amapiano?</h4>
+<ul><li>
+<strong>It's real.</strong> <a href="https://www.youtube.com/watch?v=SlQR9iu09bQ" target="_blank" rel="noopener noreferrer">Official MV</a>, released <strong>28 May 2026</strong> (<a href="https://music.apple.com/us/album/come-my-way-single/6770896821" target="_blank" rel="noopener noreferrer">Apple Music</a>, <a href="https://open.spotify.com/track/7Fl8zwH1rkbwKrlD2cC0WQ" target="_blank" rel="noopener noreferrer">Spotify</a>).
+</li><li>
+<strong>Label:</strong> The release line reads "℗ 2026 M-TP Entertainment Ltd, exclusively licensed to MMusic Records" (Apple and Spotify). Korea's Bugs adds <strong>Virgin Music Group</strong>, with Universal Music Korea as the distributor (<a href="https://music.bugs.co.kr/album/40367498" target="_blank" rel="noopener noreferrer">Bugs</a>). I couldn't confirm who owns MMusic Records or where it's based.
+</li><li>
+<strong>Credits</strong> (<a href="https://muso.ai/track/02b07edb-4873-48bf-9386-a6867d169693" target="_blank" rel="noopener noreferrer">Muso.ai</a>): producer, mixing and mastering by <strong>Marvey Muzique</strong>. Writers are Tyga and Marvey Muzique (lyrics and composition) and Sơn Tùng (composition). Tiền Phong describes Marvey Muzique as a Nigerian beatmaker who specialises in Afrobeat (<a href="https://tienphong.vn/ai-dung-sau-son-tung-post1847154.tpo" target="_blank" rel="noopener noreferrer">Tiền Phong</a>).
+</li><li>
+<strong>Genre: mostly Afrobeats, not amapiano.</strong>
+<ul><li>
+Apple lists it as "Afro-Beat".
+</li><li>
+VnExpress says it "draws influence from Afrobeats" and uses auto-tune in places.
+</li><li>
+Tiền Phong calls it an Afrobeat track.
+</li><li>
+Only <a href="https://liftedasia.com/article/come-my-way" target="_blank" rel="noopener noreferrer">LiFTED Asia</a> calls it "Amapiano-inspired".
+</li><li>
+<strong>No source I found mentions log drums or shakers.</strong>
+</li><li>
+<strong>Tempo:</strong> <a href="https://snaplyrics.com/song/come-my-way-son-tung-m-tp-and-tyga-67708968-bpm-key" target="_blank" rel="noopener noreferrer">Snaplyrics</a> lists <strong>145 BPM, D minor (7A)</strong>. That's an algorithmic estimate and may be double-time. I found no second database to confirm it, so tap it yourself.
+</li></ul>
+</li><li>
+<strong>What the lyrics are about:</strong> VnExpress sums it up as a man whose life is changed by a woman, quoting "Call me your prisoner / I'm jailed in your love I ain't coming out." Sơn Tùng told Hypebeast that the collab with Tyga, who has Vietnamese heritage, was about both of them "reconnect[ing] with our roots" (<a href="https://hypebeast.com/2026/6/son-tung-m-tp-tyga-come-my-way-single-music-video-stream-interview" target="_blank" rel="noopener noreferrer">Hypebeast, 1 Jun 2026</a>).
+</li></ul>
+<h4 id="h-4-who-made-the-mv-and-was-ai-used">4. Who made the MV, and was AI used?</h4>
+<ul><li>
+<strong>Director:</strong> <strong>Phương Vũ</strong>. Production house is <strong>Antiantiart</strong>, art department <strong>Microwave Soups</strong>, and the LA unit was <strong>More Avenue</strong> (<a href="https://www.antiantiart.com/project/come-my-way" target="_blank" rel="noopener noreferrer">Antiantiart's official credits</a>).
+</li><li>
+<strong>VFX/CGI credited:</strong>
+<ul><li>
+Dragon Street Studio (wall-of-death transition, painting scenes)
+</li><li>
+Tóth-Horgosi Gergely "Tehage" (3D, compositing)
+</li><li>
+<strong>Infinite VFX</strong> (bull-riding scene)
+</li><li>
+<strong>OMEDIA Studio</strong> (bullet time)
+</li><li>
+<strong>LumiGrade / 4DScanLab</strong> ("4DGS capture", plus Gaussian-splat cleanup)
+<p class="cont">These are 3D capture and photogrammetry techniques, not generative AI. Tri Thức explains the bull-race shot as a multi-camera bullet-time rig finished with CGI (<a href="https://baomoi.com/vi-sao-son-tung-can-chuc-camera-cho-mot-canh-nho-trong-come-my-way-c55366753.epi" target="_blank" rel="noopener noreferrer">via Báo Mới</a>).</p>
+</li></ul>
+</li><li>
+<strong>AI:</strong> No source confirms AI was used, and I found no published press speculation about it either.
+</li><li>
+<strong>The real controversies:</strong>
+<ul><li>
+Visual artist Lê Giang said the after-credits set resembled her 2017 installation <em>Tàn chỉ</em>. Antiantiart took responsibility, and on 9 Jun 2026 M-TP cut the scene. They said this was "not an admission of any legal conclusion" (<a href="https://dantri.com.vn/giai-tri/son-tung-m-tp-cat-phan-doan-gay-tranh-cai-khoi-mv-sau-on-ao-dao-nhai-20260609154042029.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>, <a href="https://tuoitre.vn/son-tung-m-tp-chinh-sua-mv-come-my-way-sau-tranh-cai-voi-nghe-si-le-giang-2026060917023167.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ</a>).
+</li><li>
+Critics also objected to him standing on a Lạc bird statue (<a href="https://www.vietnam.vn/giai-ma-mv-gay-tranh-luan-cua-son-tung" target="_blank" rel="noopener noreferrer">Vietnam.vn/Znews</a>).
+</li></ul>
+</li></ul>
+<h4 id="h-5-where-was-it-filmed-you-re-right-there">5. Where was it filmed? (You're right there!)</h4>
+<ul><li>
+The <strong>official location credits name Tràng An, Bái Đính, Tam Cốc</strong> and Chùa Rô (An Giang). The four main shoot locations were <strong>LA downtown, Ninh Bình, Saigon and the Mekong Delta</strong> (<a href="https://www.antiantiart.com/project/come-my-way" target="_blank" rel="noopener noreferrer">Antiantiart</a>).
+</li><li>
+VnExpress confirms <strong>Tràng An</strong> (UNESCO) and downtown LA. It also names the Bảy Núi bull-race festival in An Giang as a visual motif (<a href="https://e.vnexpress.net/news/life/arts/pop-star-son-tung-m-tp-s-come-my-way-becomes-youtube-s-second-most-viewed-video-5079754.html" target="_blank" rel="noopener noreferrer">VnExpress Intl</a>).
+</li><li>
+<strong>Unconfirmed:</strong> which exact shots are Tam Cốc versus Tràng An or Bái Đính. <strong>No source mentions Hạ Long.</strong>
+</li></ul>
+</section>
+<section id="career"><h2><span class="em">🚀</span>Career</h2>
+<h4 id="h-2-how-did-he-get-famous-short-version">2. How did he get famous? (short version)</h4>
+<p>Born Nguyễn Thanh Tùng in Thái Bình. Around 2011 he was posting songs underground on the LadyKillah forum. "M-TP" started as a nickname there, "Mr. Tùng Pình" (<a href="https://2sao.vn/vi-sao-chu-tich-nguyen-thanh-tung-lai-lay-nghe-danh-son-tung-m-tp-262107.html" target="_blank" rel="noopener noreferrer">2sao</a>). His self-written "Cơn Mưa Ngang Qua" went viral and won Song of the Month on <em>Bài hát yêu thích</em> in Oct 2012. On 1 Nov 2012 he signed a 5-year deal with Huy Tuấn's <strong>Văn Production</strong>. "Em Của Ngày Hôm Qua" (late 2013) hit 100M audio plays in 3 months (<a href="https://vnexpress.net/son-tung-m-tp-danh-tieng-va-thi-phi-song-hanh-3179762.html" target="_blank" rel="noopener noreferrer">VnExpress, 2015</a>). After a contract fight (Văn Production sued him in Jan 2015) he was managed by Quang Huy's <strong>WePro</strong>. He left WePro in Dec 2016 (<a href="https://tuoitre.vn/tung-mv-lac-troi-son-tung-chinh-thuc-chia-tay-wepro-1234492.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ</a>) and set up <strong>M-TP Entertainment</strong> in Nov 2016, with himself as chairman (<a href="https://vietnambiz.vn/cong-ty-mot-von-bon-loi-cua-son-tung-m-tp-dang-kinh-doanh-ra-sao-20201223102426057.htm" target="_blank" rel="noopener noreferrer">VietnamBiz</a>). "Lạc Trôi" was its first release (<a href="https://vnexpress.net/son-tung-m-tp-chia-tay-ong-bau-quang-huy-lap-cong-ty-rieng-3511971.html" target="_blank" rel="noopener noreferrer">VnExpress, 12 Dec 2016</a>).</p><h4 id="h-other-records">Other records</h4>
+<ul><li>
+<strong>Hãy Trao Cho Anh:</strong> 635K people watched the premiere live. It was the fastest Vietnamese MV to 10M views (3 hours) (<a href="https://e.vnexpress.net/news/life/arts/vietnamese-pop-star-snoop-dogg-storm-youtube-with-new-music-video-3946535.html" target="_blank" rel="noopener noreferrer">VnExpress Intl, Jul 2019</a>). Billboard also covered it (<a href="https://www.billboard.com/music/music-news/son-tung-m-tp-give-it-to-me-hay-trao-cho-anh-video-snoop-dogg-8518606/" target="_blank" rel="noopener noreferrer">Billboard</a>).
+</li><li>
+<strong>Chạy Ngay Đi:</strong> 22M views in 24 hours, reported as Asia's most-viewed MV in a day at the time (same VnExpress article). Wikipedia gives 17.6M, so the sources disagree.
+</li><li>
+<strong>Come My Way:</strong> #2 on YouTube's global 24-hour chart, per Kworb, cited by VnExpress.
+</li></ul>
+</section>
+<section id="producers"><h2><span class="em">🎛️</span>Producers &amp; engineers</h2>
+<div class="note"><p><strong>Where the credits come from:</strong></p>
+<ul><li>
+<strong>YT</strong> = the description of the official YouTube upload.
+</li><li>
+<strong>Qobuz</strong> = Qobuz track credits, which come from label metadata. Qobuz lists Sơn Tùng as "Producer" on every older release, even where YouTube names an outside producer. I read that as a label/executive-producer tag, so the YouTube credit wins where they differ.
+</li><li>
+No public source I found names a <strong>recording studio</strong> for any of these tracks. Mixing and mastering engineers are named for only two songs (There's No One At All and Come My Way). Producer Triple D says Sơn Tùng "records and mixes his own vocals" (<a href="https://thanhnien.vn/gap-phu-thuy-am-nhac-dung-sau-loat-hit-trieu-view-cua-son-tung-hoang-thuy-linh-chi-pu-1851237234.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li></ul></div><div class="tw"><table><thead><tr><th>Song (year)</th><th>Producer / arranger</th><th>Mix / master</th><th>Source</th></tr></thead><tbody><tr><td>Cơn Mưa Ngang Qua (2012)</td><td>Not credited. Qobuz lists Sơn Tùng only (2022 re-release)</td><td>n/a</td><td><a href="https://www.qobuz.com/us-en/album/con-mua-ngang-qua-son-tung-m-tp/lkfggwcyvpa1b" target="_blank" rel="noopener noreferrer">Qobuz</a></td></tr><tr><td>Em Của Ngày Hôm Qua (2013)</td><td>Not credited. Qobuz lists Sơn Tùng only</td><td>n/a</td><td><a href="https://www.qobuz.com/us-en/album/em-cua-ngay-hom-qua-son-tung-m-tp/sw7icondl2l5b" target="_blank" rel="noopener noreferrer">Qobuz</a>. VnExpress reports he confirmed using foreign backing tracks ("inspiration") on several early hits (<a href="https://vnexpress.net/son-tung-m-tp-danh-tieng-va-thi-phi-song-hanh-3179762.html" target="_blank" rel="noopener noreferrer">VnExpress</a>)</td></tr><tr><td>Âm Thầm Bên Em (2015)</td><td>Arranger not credited</td><td>Sound re-recording mixer: <strong>Long Halo</strong></td><td><a href="https://www.youtube.com/watch?v=30KI5SuECuc" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Chúng Ta Không Thuộc Về Nhau (2016)</td><td><strong>Triple D</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=qGRU3sRbaYw" target="_blank" rel="noopener noreferrer">YT</a>, <a href="https://www.saostar.vn/am-nhac/nguoi-hoa-hit-moi-son-tung-triple-d-len-tieng-ban-phoi-hoan-toan-la-cua-minh-658229.html" target="_blank" rel="noopener noreferrer">Saostar interview</a></td></tr><tr><td>Lạc Trôi (2016)</td><td><strong>Triple D</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=Llw9Q6akRo4" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Nơi Này Có Anh (2017)</td><td>Arranger <strong>Khắc Hưng</strong></td><td>Master: <strong>Long Halo</strong></td><td><a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Chạy Ngay Đi (2018)</td><td><strong>Onionn</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=32sYGCOYJUM" target="_blank" rel="noopener noreferrer">YT</a>. Onionn also credited as remixer on a later remix release (<a href="https://www.qobuz.com/us-en/album/chay-ngay-i-son-tung-m-tp/ufvy6nvonczab" target="_blank" rel="noopener noreferrer">Qobuz</a>)</td></tr><tr><td>Hãy Trao Cho Anh ft. Snoop Dogg (2019)</td><td><strong>Onionn</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=knW7-x7Y7RE" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Có Chắc Yêu Là Đây (2020)</td><td><strong>Onionn</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=6t-MjBazs3o" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Chúng Ta Của Hiện Tại (2020)</td><td><strong>Onionn</strong></td><td>MV final mix: Tian Do (video audio, not the single)</td><td><a href="https://www.youtube.com/watch?v=psZ1g9fMfeo" target="_blank" rel="noopener noreferrer">YT</a></td></tr><tr><td>Muộn Rồi Mà Sao Còn (2021)</td><td><strong>Sơn Tùng M-TP</strong></td><td>n/a</td><td><a href="https://www.youtube.com/watch?v=xypzmu5mMPY" target="_blank" rel="noopener noreferrer">YT</a>, <a href="https://www.qobuz.com/us-en/album/muon-roi-ma-sao-con-son-tung-m-tp/x79ye707wtrcb" target="_blank" rel="noopener noreferrer">Qobuz</a></td></tr><tr><td>There's No One At All (2022)</td><td><strong>Sơn Tùng M-TP</strong></td><td>Mastered by <strong>Greg Calbi / Steve Fallone</strong></td><td><a href="https://www.youtube.com/watch?v=JHSRTU31T14" target="_blank" rel="noopener noreferrer">YT (another version)</a>. Wikipedia instead names Chris Gehringer, which conflicts with the official credit</td></tr><tr><td>Making My Way (2023)</td><td><strong>Sơn Tùng M-TP</strong></td><td>n/a</td><td><a href="https://www.qobuz.com/us-en/album/making-my-way-son-tung-m-tp/md6a9kehajdva" target="_blank" rel="noopener noreferrer">Qobuz</a>, <a href="https://mtpentertainment.com/nghe-si-son-tung-m-tp-chinh-thuc-cho-trinh-lang-phien-ban-audio-cua-making-my-way/" target="_blank" rel="noopener noreferrer">M-TP Ent</a></td></tr><tr><td>Chúng Ta Của Tương Lai (2024)</td><td><strong>M-TP Talent Team + Marvey Muzique</strong></td><td>n/a</td><td><a href="https://www.qobuz.com/us-en/album/chung-ta-cua-tuong-lai-son-tung-m-tp/llojidlxzibec" target="_blank" rel="noopener noreferrer">Qobuz</a></td></tr><tr><td>Đừng Làm Trái Tim Anh Đau (2024)</td><td><strong>M-TP Talent Team + Marvey Muzique</strong></td><td>n/a</td><td><a href="https://www.qobuz.com/us-en/album/ung-lam-trai-tim-anh-au-son-tung-m-tp/orzmlfcvr0lyb" target="_blank" rel="noopener noreferrer">Qobuz</a></td></tr><tr><td>Come My Way ft. Tyga (2026)</td><td><strong>Marvey Muzique</strong></td><td>Mix and master: <strong>Marvey Muzique</strong></td><td><a href="https://www.qobuz.com/us-en/album/come-my-way-son-tung-m-tp-tyga/kbwirl2adhge5" target="_blank" rel="noopener noreferrer">Qobuz</a>, <a href="https://muso.ai/track/02b07edb-4873-48bf-9386-a6867d169693" target="_blank" rel="noopener noreferrer">Muso.ai</a></td></tr></tbody></table></div>
+<p>Sơn Tùng is credited as composer on all of these. On Come My Way he shares writing credit with Tyga and Marvey Muzique.</p>
+<h4 id="h-recurring-collaborators">Recurring collaborators</h4>
+<ul><li>
+<strong>Triple D (Dương Đại Dương):</strong> from the Hanoi underground and the SpaceSpeakers crew, with a background in trap, house and dubstep. He produced Chúng Ta Không Thuộc Về Nhau and Lạc Trôi, and calls Sơn Tùng's talent "năng khiếu trời cho" (a God-given gift) (<a href="https://thanhnien.vn/gap-phu-thuy-am-nhac-dung-sau-loat-hit-trieu-view-cua-son-tung-hoang-thuy-linh-chi-pu-1851237234.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>Onionn:</strong>
+<ul><li>
+Produced Chạy Ngay Đi, Hãy Trao Cho Anh, Có Chắc Yêu Là Đây and Chúng Ta Của Hiện Tại.
+</li><li>
+Signed exclusively to M-TP Entertainment in July 2020 and announced his exit on 5 Jan 2022.
+</li><li>
+Kenh14 notes that two of his productions for Sơn Tùng drew plagiarism suspicions.
+<p class="cont">Source: <a href="https://kenh14.vn/hon-3-nam-onionn-lam-nhac-cho-son-tung-so-luong-it-oi-dem-tren-dau-ngon-tay-da-the-2-san-pham-con-vuong-nghi-van-dao-nhac-20220105151348621.chn" target="_blank" rel="noopener noreferrer">Kenh14</a>.</p>
+</li></ul>
+</li><li>
+<strong>Khắc Hưng:</strong> credited only as arranger on Nơi Này Có Anh. I found no other Sơn Tùng credit for him.
+</li><li>
+<strong>Long Halo:</strong> mixed audio on Âm Thầm Bên Em and mastered Nơi Này Có Anh (YT credits).
+</li><li>
+<strong>Marvey Muzique:</strong>
+<ul><li>
+Tiền Phong describes him as a Nigerian, Grammy-nominated Afrobeat producer. He was sound engineer on There's No One At All, then main producer on Come My Way (<a href="https://tienphong.vn/ai-dung-sau-son-tung-post1847154.tpo" target="_blank" rel="noopener noreferrer">Tiền Phong</a>).
+</li><li>
+Co-producer on Chúng Ta Của Tương Lai and Đừng Làm Trái Tim Anh Đau (Qobuz).
+</li><li>
+"Grammy-nominated" rests on Tiền Phong alone <strong><span class="flag unv">[Unverified]</span></strong>.
+</li></ul>
+</li><li>
+<strong>M-TP Talent Team:</strong> his label's in-house production credit (Qobuz, 2024 singles). No individual members are named publicly.
+</li><li>
+<strong>SlimV:</strong> producer or remixer on some tracks of the 2017 compilation <em>m-tp M-TP</em> (<a href="https://www.qobuz.com/us-en/album/m-tp-m-tp-son-tung-m-tp/noultgdyvnvnb" target="_blank" rel="noopener noreferrer">Qobuz</a>).
+</li></ul><h3>From the starter brief</h3><h4 id="h-producers-and-songwriters">Producers and songwriters</h4>
+<p>These come from the official YouTube credits. Sơn Tùng is credited as <strong>composer on every key song below</strong>.</p>
+<ul><li>
+<strong>Triple D</strong> produced Lạc Trôi.
+</li><li>
+<strong>Khắc Hưng</strong> arranged Nơi Này Có Anh.
+</li><li>
+<strong>Onionn</strong> produced Chạy Ngay Đi, Hãy Trao Cho Anh, Có Chắc Yêu Là Đây and Chúng Ta Của Hiện Tại.
+</li><li>
+<strong>Sơn Tùng himself</strong> produced Muộn Rồi Mà Sao Còn.
+</li><li>
+<strong>Marvey Muzique</strong> produced Come My Way.
+</li><li>
+<strong><span class="flag unv">[Unverified, Wikipedia only]</span>:</strong> Making My Way self-produced; Đừng Làm Trái Tim Anh Đau produced by M-TP Talent Team with Marvey Muzique.
+</li><li>
+<strong>Touliver and Masew:</strong> I found no credit on these songs.
+</li></ul>
+</section>
+<section id="videos"><h2><span class="em">🎬</span>Videos &amp; VFX</h2>
+<div class="tw"><table><thead><tr><th>MV</th><th>Director / production house</th><th>DOP</th><th>VFX / post</th><th>Styling / choreography / notes</th></tr></thead><tbody><tr><td><a href="https://www.youtube.com/watch?v=30KI5SuECuc" target="_blank" rel="noopener noreferrer">Âm Thầm Bên Em</a></td><td>Nguyễn Quang Huy</td><td>Đức Bi</td><td>n/a</td><td>Production designer Ngô Phước Trường</td></tr><tr><td><a href="https://www.youtube.com/watch?v=qGRU3sRbaYw" target="_blank" rel="noopener noreferrer">Chúng Ta Không Thuộc Về Nhau</a></td><td>Đinh Hà Uyên Thư</td><td>Tung Bui</td><td>Post MR.BLUE</td><td>Production designer Do Ba Ty</td></tr><tr><td><a href="https://www.youtube.com/watch?v=Llw9Q6akRo4" target="_blank" rel="noopener noreferrer">Lạc Trôi</a></td><td>Đinh Hà Uyên Thư; M&amp;M House</td><td>Tung Bui</td><td>Post MR.BLUE</td><td>Production designer Do Ba Ty</td></tr><tr><td><a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener noreferrer">Nơi Này Có Anh</a></td><td>Gin Trần; Dreams Productions</td><td>Lub Nguyen</td><td>n/a</td><td>Art director Thien Thanh</td></tr><tr><td><a href="https://www.youtube.com/watch?v=32sYGCOYJUM" target="_blank" rel="noopener noreferrer">Chạy Ngay Đi</a></td><td>Koinrush / Insp; Korean crew ("Korea, May 2018")</td><td>Eumko</td><td>n/a</td><td>Art director Gwi Ock Shin; co-star Davika Hoorne</td></tr><tr><td><a href="https://www.youtube.com/watch?v=knW7-x7Y7RE" target="_blank" rel="noopener noreferrer">Hãy Trao Cho Anh</a></td><td>Korlio, <strong>August Frogs</strong>; credit reads "Los Angeles, 2018"</td><td>n/a</td><td>CGI Jiun Kim</td><td>Stylist Hary Hong; choreographer Luana Simpson Fowler; Madison Beer co-stars</td></tr><tr><td><a href="https://www.youtube.com/watch?v=6t-MjBazs3o" target="_blank" rel="noopener noreferrer">Có Chắc Yêu Là Đây</a></td><td>Jason (creative director Ben Pham)</td><td>Tung Bui</td><td><strong>Spice FX</strong>; motion control <strong>Lumigrade</strong></td><td>Choreographer Bao Bao; fashion consultant Phạm Bảo Luận</td></tr><tr><td><a href="https://www.youtube.com/watch?v=psZ1g9fMfeo" target="_blank" rel="noopener noreferrer">Chúng Ta Của Hiện Tại</a></td><td>Lê Huy Anh, <strong>Children Of</strong></td><td>Tung Bui</td><td>Post Children Of Studio; VFX supervisor Clement Duy Nguyen</td><td>Stylists Ve KrisNa, Nguyễn Ngọc Hằng and Phạm Bảo Luận; star Hải Tú</td></tr><tr><td><a href="https://www.youtube.com/watch?v=xypzmu5mMPY" target="_blank" rel="noopener noreferrer">Muộn Rồi Mà Sao Còn</a></td><td>Jason (also edit)</td><td>Trang Doan (also colorist)</td><td><strong>SpiceFX</strong> (supervisor Ngô Quốc Duy)</td><td>Stylist Phạm Bảo Luận</td></tr><tr><td><a href="https://www.youtube.com/watch?v=JHSRTU31T14" target="_blank" rel="noopener noreferrer">There's No One At All (another version)</a></td><td>Jason</td><td>Tung Bui</td><td>Colorist Jacob McKee</td><td>The original version was ordered destroyed in 2022</td></tr><tr><td><a href="https://www.youtube.com/watch?v=zoEtcR5EW08" target="_blank" rel="noopener noreferrer">Chúng Ta Của Tương Lai</a></td><td>Not credited on YouTube</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td><a href="https://www.youtube.com/watch?v=abPmZCZZrFA" target="_blank" rel="noopener noreferrer">Đừng Làm Trái Tim Anh Đau</a></td><td>Not credited on YouTube; shot entirely in Thailand (<a href="https://lifestyle.zingnews.vn/son-tung-tung-mv-voi-nguoi-dep-thai-lan-post1479897.html" target="_blank" rel="noopener noreferrer">Znews</a>)</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td><a href="https://www.youtube.com/watch?v=SlQR9iu09bQ" target="_blank" rel="noopener noreferrer">Come My Way</a></td><td>Phương Vũ, <strong>Antiantiart</strong>; LA unit <strong>More Avenue</strong></td><td>Kelvin Chew Wei Zhong</td><td>Dragon Street Studio, Tehage, Infinite VFX, OMEDIA bullet time, LumiGrade/4DScanLab 4DGS capture</td><td>Wardrobe Vicki Virus (La Lune); art department Microwave Soups; choreography Crazy Monkey and Quốc Tít (Last Fire Crew); makeup Phat Phat. All from <a href="https://www.antiantiart.com/project/come-my-way" target="_blank" rel="noopener noreferrer">Antiantiart credits</a></td></tr></tbody></table></div>
+<p><strong>Notable techniques:</strong></p>
+<ul><li>
+<strong>Come My Way:</strong> a multi-camera bullet-time rig plus CGI for the bull-race scene (<a href="https://baomoi.com/vi-sao-son-tung-can-chuc-camera-cho-mot-canh-nho-trong-come-my-way-c55366753.epi" target="_blank" rel="noopener noreferrer">Tri Thức via Báo Mới</a>), and 4D Gaussian-splat capture (credits). No source confirms generative AI.
+</li></ul>
+<p><strong>Budgets:</strong> none has been officially disclosed.</p>
+<ul><li>
+Hãy Trao Cho Anh is widely reported at about US$3M (around VND 66 billion), including about US$40K for Snoop Dogg. Saostar itself says this is unconfirmed, so treat it as <strong><span class="flag rum">[Rumour]</span></strong> (<a href="https://www.saostar.vn/cong-nghe/son-tung-m-tp-dau-tu-66-ti-lam-mv-nhung-da-kiem-lai-duoc-bao-nhieu-5570529.html" target="_blank" rel="noopener noreferrer">Saostar</a>).
+</li></ul>
+<p><strong>Recurring creative partners (by credit count above):</strong></p>
+<ul><li>
+<strong>Tung Bui</strong> (DOP): 5 MVs.
+</li><li>
+<strong>Jason</strong> (director): 3 MVs.
+</li><li>
+<strong>Mr. Blue</strong> (post-production): Chúng Ta Không Thuộc Về Nhau, Lạc Trôi, Có Chắc Yêu Là Đây.
+</li><li>
+<strong>Phạm Bảo Luận</strong> (styling): 3 MVs.
+</li><li>
+<strong>Phat Phat</strong> (makeup): Có Chắc Yêu Là Đây, Muộn Rồi Mà Sao Còn and Come My Way.
+</li><li>
+<strong>Lumigrade</strong> (camera tech): Có Chắc Yêu Là Đây and Come My Way.
+</li><li>
+<strong>SpiceFX</strong> (VFX): 2 MVs.
+</li></ul><h3>From the starter brief</h3><h4 id="h-key-mvs-youtube-views-read-21-oct-2026">Key MVs (YouTube views read 21 Oct 2026)</h4>
+<div class="tw"><table><thead><tr><th>MV</th><th>Director / crew (official credit)</th><th>Where</th><th>Views</th></tr></thead><tbody><tr><td><a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener noreferrer">Nơi Này Có Anh</a> (2017)</td><td>Gin Trần</td><td>n/a</td><td>464M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=Llw9Q6akRo4" target="_blank" rel="noopener noreferrer">Lạc Trôi</a> (2016)</td><td>Đinh Hà Uyên Thư; post-production MR.BLUE</td><td>location unconfirmed</td><td>289M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=32sYGCOYJUM" target="_blank" rel="noopener noreferrer">Chạy Ngay Đi</a> (2018)</td><td>Koinrush / Insp; with Davika Hoorne</td><td>credit reads "Korea, May 2018"</td><td>166M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=knW7-x7Y7RE" target="_blank" rel="noopener noreferrer">Hãy Trao Cho Anh ft. Snoop Dogg</a> (2019)</td><td>Korlio (August Frogs); CGI by Jiun Kim; with Madison Beer</td><td>"Los Angeles, 2018"</td><td>314M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=6t-MjBazs3o" target="_blank" rel="noopener noreferrer">Có Chắc Yêu Là Đây</a> (2020)</td><td>Jason; VFX Spice FX</td><td>n/a</td><td>197M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=psZ1g9fMfeo" target="_blank" rel="noopener noreferrer">Chúng Ta Của Hiện Tại</a> (2020)</td><td>Lê Huy Anh (Children Of)</td><td>n/a</td><td>117M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=xypzmu5mMPY" target="_blank" rel="noopener noreferrer">Muộn Rồi Mà Sao Còn</a> (2021)</td><td>Jason; VFX SpiceFX</td><td>n/a</td><td>244M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=niPkap1ozUA" target="_blank" rel="noopener noreferrer">Making My Way</a> (2023, visualizer)</td><td>no credits listed</td><td>n/a</td><td>58M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=abPmZCZZrFA" target="_blank" rel="noopener noreferrer">Đừng Làm Trái Tim Anh Đau</a> (2024)</td><td>not credited on YouTube</td><td>shot entirely in Thailand (<a href="https://lifestyle.zingnews.vn/son-tung-tung-mv-voi-nguoi-dep-thai-lan-post1479897.html" target="_blank" rel="noopener noreferrer">Znews</a>)</td><td>186M</td></tr><tr><td><a href="https://www.youtube.com/watch?v=SlQR9iu09bQ" target="_blank" rel="noopener noreferrer">Come My Way ft. Tyga</a> (2026)</td><td>Phương Vũ (Antiantiart)</td><td>Ninh Bình, LA, Saigon, Mekong</td><td>43M</td></tr></tbody></table></div>
+</section>
+<section id="styling"><h2><span class="em">👔</span>Styling</h2>
+<ul><li>
+<strong>Long-time stylist: Phạm Bảo Luận.</strong> He had worked with Sơn Tùng for more than 4 years as of 2020. He says Tùng "usually buys his own outfits", for example several limited Louis Vuitton pieces in Có Chắc Yêu Là Đây (<a href="https://bazaarvietnam.vn/nhan-vat/stylist-bao-luan-son-tung-m-tp-thuong-tu-mua-cac-trang-phuc-cua-anh/" target="_blank" rel="noopener noreferrer">Harper's Bazaar VN, 24 Aug 2020</a>).
+</li><li>
+<strong>Come My Way wardrobe: Quách Đắc Thắng ("Vicky Virus"), founder of La Lune.</strong>
+<ul><li>
+Close to 10 looks, mostly custom-made, mixing cổ phục (traditional dress), áo dài, Đông Sơn Lạc-bird embroidery and a 3D-printed nón quai thao (traditional flat palm-leaf hat) (<a href="https://hoahoctro.tienphong.vn/ai-dung-sau-loat-tao-hinh-man-nhan-cua-son-tung-m-tp-trong-mv-come-my-way-post1847394.tpo" target="_blank" rel="noopener noreferrer">Hoa Học Trò / Tiền Phong</a>).
+</li><li>
+In the Ninh Bình scene he wears a beige silk áo dài with distressed trousers, <strong>Nike</strong> sneakers, <strong>Cartier</strong> and <strong>Van Cleef &amp; Arpels</strong> bracelets and a <strong>Gucci</strong> fan.
+</li><li>
+Elsewhere: a fur jacket with jeans next to Tyga beside a DeLorean, and a tweed hoodie with leather Bermudas (<a href="https://vnexpress.net/trang-phuc-truyen-thong-pha-duong-dai-trong-mv-cua-son-tung-m-tp-5079787.html" target="_blank" rel="noopener noreferrer">VnExpress</a>).
+</li></ul>
+</li><li>
+<strong>Gucci:</strong> named Gucci's first male "Friend of the House" in Vietnam in May 2023 (<a href="https://www.media-outreach.com/news/vietnam/2023/05/31/223386/gucci-announces-vietnamese-superstar-son-tung-m-tp-as-the-exclusive-friend-of-the-house-in-vietnam/" target="_blank" rel="noopener noreferrer">Media OutReach release</a>). He sat front row at the Gucci Cruise 2024 show in Seoul (<a href="https://bazaarvietnam.vn/son-tung-m-tp-ngoi-front-row-show-gucci-cruise-2024/" target="_blank" rel="noopener noreferrer">Harper's Bazaar VN</a>).
+</li><li>
+<strong>Award:</strong> ELLE Style Awards 2017, Most Stylish Male Singer (<a href="https://www.elle.vn/thoi-trang/son-tung-mtp-thang-giai-nam-ca-si-phong-cach-nhat-cua-nam/" target="_blank" rel="noopener noreferrer">ELLE VN</a>).
+</li><li>
+<strong>Own fashion line:</strong>
+<ul><li>
+He announced a brand called <strong>PlusEightyFour (+84)</strong>, named after Vietnam's dialling code, in Dec 2019 (<a href="https://cafebiz.vn/con-chua-ra-mat-thuong-hieu-thoi-trang-84-cua-son-tung-m-tp-da-bi-nghi-ngo-muon-y-tuong-tu-g-dragon-20191218180935342.chn" target="_blank" rel="noopener noreferrer">CafeBiz</a>). I found <strong>no evidence it ever launched</strong>.
+</li><li>
+Confirmed merch: exclusive "There's No One At All" T-shirts sold via VinID, linked in the <a href="https://www.youtube.com/watch?v=JHSRTU31T14" target="_blank" rel="noopener noreferrer">official MV description</a>.
+</li></ul>
+</li><li>
+<strong>Signature look (as sourced):</strong> he buys his own luxury pieces (Bazaar) and mixes traditional Vietnamese dress with streetwear (VnExpress). CafeBiz compared the +84 concept to G-Dragon. Wider "fashion icon" claims appear only on Wikipedia <strong><span class="flag unv">[Unverified]</span></strong>.
+</li></ul>
+</section>
+<section id="fans"><h2><span class="em">☁️</span>Fans (“Sky”)</h2>
+<ul><li>
+<strong>Name origin:</strong> a fan named Trang offered two options in 2012, "M-TP Fs" or "Sky". He picked Sky ("the sky protects and supports him"). It caught on after he greeted fans as Sky in a Christmas clip, and he later named the 2019 <strong>Sky Tour</strong> after them (<a href="https://znews.vn/dang-sau-ten-goi-cong-dong-fan-cua-son-tung-m-tp-den-vau-post1015566.html" target="_blank" rel="noopener noreferrer">Znews, 21 Nov 2019</a>).
+</li><li>
+<strong>Fan club structure:</strong> I found no official membership or chapter figures <strong><span class="flag nf">[Not found]</span></strong>.
+</li><li>
+<strong>Where listeners are</strong> (Spotify artist page, "About" panel, read 21 Oct 2026, <a href="https://open.spotify.com/artist/5dfZ5uSmzR7VQK0udbAVpf" target="_blank" rel="noopener noreferrer">Spotify</a>). He has <strong>8,883,327 followers</strong> and 1,917,681 monthly listeners. Top cities by listeners:
+<div class="tw"><table><thead><tr><th>City</th><th>Listeners</th></tr></thead><tbody><tr><td>Ho Chi Minh City</td><td>719,448</td></tr><tr><td>Hanoi</td><td>605,552</td></tr><tr><td>Da Nang</td><td>111,044</td></tr><tr><td>Haiphong</td><td>42,530</td></tr><tr><td>Cần Thơ</td><td>32,906</td></tr></tbody></table></div>
+<p class="cont">All of the top 5 are in Vietnam. I found <strong>no sourced diaspora or overseas breakdown</strong>.</p>
+</li><li>
+<strong>Notable fan events:</strong>
+<ul><li>
+<strong>Sky Tour 2019:</strong> Ho Chi Minh City, then Đà Nẵng, ending at Mỹ Đình stadium in Hanoi on 11 Aug 2019, which Znews described as "almost full" (<a href="https://znews.vn/son-tung-ngong-cuong-va-dem-dien-day-nuoc-mat-o-ha-noi-post977560.html" target="_blank" rel="noopener noreferrer">Znews</a>).
+</li><li>
+<strong>Sky Tour Movie:</strong> on Netflix from Sept 2020 (<a href="https://e.vnexpress.net/news/life/arts/documentary-on-v-pop-prince-to-hit-netflix-4153679.html" target="_blank" rel="noopener noreferrer">VnExpress Intl</a>).
+</li><li>
+<strong>Diamond Play Button:</strong> he was the first Vietnamese artist to receive one (<a href="https://e.vnexpress.net/news/arts/son-tung-m-tp-first-vietnamese-artist-to-receive-youtube-diamond-play-button-4484455.html" target="_blank" rel="noopener noreferrer">VnExpress Intl</a>).
+</li></ul>
+</li></ul>
+</section>
+<section id="songs"><h2><span class="em">🏆</span>Top songs</h2>
+<p><strong>YouTube MV views</strong> (official uploads, read 21 Oct 2026). This ranks only the MVs I checked, not a full channel scrape.</p>
+<div class="tw"><table><thead><tr><th>#</th><th>MV</th><th>Views</th></tr></thead><tbody><tr><td>1</td><td><a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener noreferrer">Nơi Này Có Anh</a></td><td>464.1M</td></tr><tr><td>2</td><td><a href="https://www.youtube.com/watch?v=knW7-x7Y7RE" target="_blank" rel="noopener noreferrer">Hãy Trao Cho Anh</a></td><td>313.8M</td></tr><tr><td>3</td><td><a href="https://www.youtube.com/watch?v=Llw9Q6akRo4" target="_blank" rel="noopener noreferrer">Lạc Trôi</a></td><td>288.7M</td></tr><tr><td>4</td><td><a href="https://www.youtube.com/watch?v=qGRU3sRbaYw" target="_blank" rel="noopener noreferrer">Chúng Ta Không Thuộc Về Nhau</a></td><td>251.9M</td></tr><tr><td>5</td><td><a href="https://www.youtube.com/watch?v=xypzmu5mMPY" target="_blank" rel="noopener noreferrer">Muộn Rồi Mà Sao Còn</a></td><td>244.1M</td></tr><tr><td>6</td><td><a href="https://www.youtube.com/watch?v=6t-MjBazs3o" target="_blank" rel="noopener noreferrer">Có Chắc Yêu Là Đây</a></td><td>196.6M</td></tr><tr><td>7</td><td><a href="https://www.youtube.com/watch?v=abPmZCZZrFA" target="_blank" rel="noopener noreferrer">Đừng Làm Trái Tim Anh Đau</a></td><td>186.2M</td></tr><tr><td>8</td><td><a href="https://www.youtube.com/watch?v=LCyo565N_5w" target="_blank" rel="noopener noreferrer">Buông Đôi Tay Nhau Ra</a></td><td>181.3M</td></tr><tr><td>9</td><td><a href="https://www.youtube.com/watch?v=30KI5SuECuc" target="_blank" rel="noopener noreferrer">Âm Thầm Bên Em</a></td><td>176.4M</td></tr><tr><td>10</td><td><a href="https://www.youtube.com/watch?v=32sYGCOYJUM" target="_blank" rel="noopener noreferrer">Chạy Ngay Đi</a></td><td>165.9M</td></tr><tr><td>11</td><td><a href="https://www.youtube.com/watch?v=psZ1g9fMfeo" target="_blank" rel="noopener noreferrer">Chúng Ta Của Hiện Tại</a></td><td>116.7M</td></tr><tr><td>12</td><td><a href="https://www.youtube.com/watch?v=zoEtcR5EW08" target="_blank" rel="noopener noreferrer">Chúng Ta Của Tương Lai</a></td><td>91.8M</td></tr><tr><td>13</td><td><a href="https://www.youtube.com/watch?v=PdbsnGuduvo" target="_blank" rel="noopener noreferrer">Chắc Ai Đó Sẽ Về</a></td><td>62.6M</td></tr><tr><td>14</td><td><a href="https://www.youtube.com/watch?v=niPkap1ozUA" target="_blank" rel="noopener noreferrer">Making My Way (visualizer)</a></td><td>58.2M</td></tr><tr><td>15</td><td><a href="https://www.youtube.com/watch?v=SlQR9iu09bQ" target="_blank" rel="noopener noreferrer">Come My Way</a></td><td>43.2M</td></tr></tbody></table></div>
+<p><strong>Spotify all-time streams</strong> (<a href="https://kworb.net/spotify/artist/5dfZ5uSmzR7VQK0udbAVpf_songs.html" target="_blank" rel="noopener noreferrer">Kworb</a>, updated 19 Oct 2026; artist total 857.9M):</p>
+<div class="tw"><table><thead><tr><th>#</th><th>Song</th><th>Streams</th></tr></thead><tbody><tr><td>1</td><td>Chúng Ta Của Hiện Tại</td><td>83.7M</td></tr><tr><td>2</td><td>Âm Thầm Bên Em</td><td>79.1M</td></tr><tr><td>3</td><td>Đừng Làm Trái Tim Anh Đau</td><td>75.6M</td></tr><tr><td>4</td><td>Muộn Rồi Mà Sao Còn</td><td>72.4M</td></tr><tr><td>5</td><td>Nơi Này Có Anh</td><td>66.0M</td></tr><tr><td>6</td><td>Buông Đôi Tay Nhau Ra</td><td>52.6M</td></tr><tr><td>7</td><td>Chúng Ta Của Tương Lai</td><td>44.2M</td></tr><tr><td>8</td><td>Có Chắc Yêu Là Đây</td><td>43.5M</td></tr><tr><td>9</td><td>Hãy Trao Cho Anh</td><td>38.4M</td></tr><tr><td>10</td><td>Chúng Ta Không Thuộc Về Nhau</td><td>30.1M</td></tr><tr><td>11</td><td>Chắc Ai Đó Sẽ Về</td><td>27.0M</td></tr><tr><td>12</td><td>Lạc Trôi</td><td>20.4M</td></tr><tr><td>…</td><td>Come My Way</td><td>11.8M</td></tr></tbody></table></div>
+<p>Kworb lists <strong>no studio version of Making My Way or Chạy Ngay Đi</strong>, so their Spotify totals are missing <strong><span class="flag nf">[Not found]</span></strong>.</p>
+<p><strong>Takeaway:</strong> Nơi Này Có Anh and Hãy Trao Cho Anh dominate YouTube. On Spotify the slower ballads and mid-tempo songs lead (Chúng Ta Của Hiện Tại, Âm Thầm Bên Em). Lạc Trôi is huge on YouTube but modest on Spotify.</p><h4 id="h-start-listening">Start listening</h4>
+<ol><li>
+<a href="https://www.youtube.com/watch?v=SlQR9iu09bQ" target="_blank" rel="noopener noreferrer">Come My Way ft. Tyga</a>: Ninh Bình on screen, Afrobeats.
+</li><li>
+<a href="https://www.youtube.com/watch?v=knW7-x7Y7RE" target="_blank" rel="noopener noreferrer">Hãy Trao Cho Anh ft. Snoop Dogg</a>: reggaeton bounce.
+</li><li>
+<a href="https://www.youtube.com/watch?v=Llw9Q6akRo4" target="_blank" rel="noopener noreferrer">Lạc Trôi</a>: future bass with traditional instruments.
+</li><li>
+<a href="https://www.youtube.com/watch?v=32sYGCOYJUM" target="_blank" rel="noopener noreferrer">Chạy Ngay Đi</a>: EDM drop, 127 BPM.
+</li><li>
+<a href="https://www.youtube.com/watch?v=xypzmu5mMPY" target="_blank" rel="noopener noreferrer">Muộn Rồi Mà Sao Còn</a>: his Billboard Global entry.
+</li><li>
+<a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener noreferrer">Nơi Này Có Anh</a>: his most-viewed MV, the pop core.
+</li></ol>
+</section>
+<section id="dj"><h2><span class="em">🎧</span>DJ sound links</h2>
+<p class="note">BPM and key figures are SongBPM/Snaplyrics database estimates.</p><div class="tw"><table><thead><tr><th>Song</th><th>Sound / genre (as sourced)</th><th>BPM</th><th>Key</th><th>BPM/key source</th></tr></thead><tbody><tr><td>Come My Way</td><td>Afrobeats. The amapiano label rests on one outlet (see Q3).</td><td>145</td><td>D minor (7A)</td><td><a href="https://snaplyrics.com/song/come-my-way-son-tung-m-tp-and-tyga-67708968-bpm-key" target="_blank" rel="noopener noreferrer">Snaplyrics</a></td></tr><tr><td>Hãy Trao Cho Anh</td><td>reggaeton, tropical house and hip-hop (VnExpress). Probably your easiest bridge from afro-pop sets.</td><td>96</td><td>D♯ minor</td><td><a href="https://songbpm.com/@son-tung-m-tp/hay-trao-cho-anh" target="_blank" rel="noopener noreferrer">SongBPM</a></td></tr><tr><td>Lạc Trôi</td><td>future bass with đàn tranh and sáo (<a href="https://vnexpress.net/son-tung-m-tp-chia-tay-ong-bau-quang-huy-lap-cong-ty-rieng-3511971.html" target="_blank" rel="noopener noreferrer">VnExpress</a>)</td><td>135</td><td>A minor</td><td><a href="https://songbpm.com/@son-tung-m-tp/lac-troi" target="_blank" rel="noopener noreferrer">SongBPM</a></td></tr><tr><td>Chạy Ngay Đi</td><td>Closest to house tempo.</td><td>127</td><td>D minor</td><td><a href="https://songbpm.com/@son-tung-m-tp/chay-ngay-di" target="_blank" rel="noopener noreferrer">SongBPM</a></td></tr><tr><td>Có Chắc Yêu Là Đây</td><td>n/a</td><td>95</td><td>B♭ minor</td><td><a href="https://songbpm.com/@son-tung-m-tp/co-chac-yeu-la-day" target="_blank" rel="noopener noreferrer">SongBPM</a></td></tr><tr><td>Making My Way</td><td>Wikipedia calls it moombahton/EDM/dancehall <strong><span class="flag unv">[Wikipedia only]</span></strong></td><td>n/a</td><td>n/a</td><td>n/a</td></tr></tbody></table></div><details open><summary>Original notes (verbatim)</summary><ul><li>
+<strong>Come My Way:</strong> Afrobeats. The amapiano label rests on one outlet (see Q3). 145 BPM, D minor (7A).
+</li><li>
+<strong>Hãy Trao Cho Anh:</strong> reggaeton, tropical house and hip-hop (VnExpress). 96 BPM, D♯ minor (<a href="https://songbpm.com/@son-tung-m-tp/hay-trao-cho-anh" target="_blank" rel="noopener noreferrer">SongBPM</a>). Probably your easiest bridge from afro-pop sets.
+</li><li>
+<strong>Making My Way:</strong> Wikipedia calls it moombahton/EDM/dancehall <strong><span class="flag unv">[Wikipedia only]</span></strong>.
+</li><li>
+<strong>Lạc Trôi:</strong> future bass with đàn tranh and sáo (<a href="https://vnexpress.net/son-tung-m-tp-chia-tay-ong-bau-quang-huy-lap-cong-ty-rieng-3511971.html" target="_blank" rel="noopener noreferrer">VnExpress</a>). 135 BPM, A minor (<a href="https://songbpm.com/@son-tung-m-tp/lac-troi" target="_blank" rel="noopener noreferrer">SongBPM</a>).
+</li><li>
+<strong>Chạy Ngay Đi:</strong> 127 BPM, D minor (<a href="https://songbpm.com/@son-tung-m-tp/chay-ngay-di" target="_blank" rel="noopener noreferrer">SongBPM</a>). Closest to house tempo.
+</li><li>
+<strong>Có Chắc Yêu Là Đây:</strong> 95 BPM, B♭ minor (<a href="https://songbpm.com/@son-tung-m-tp/co-chac-yeu-la-day" target="_blank" rel="noopener noreferrer">SongBPM</a>).
+</li><li>
+<strong>Honest note:</strong> I found no source linking him to afro house, coupé-décalé or biama.
+</li></ul></details>
+</section>
+<section id="tutorials"><h2><span class="em">📺</span>Tutorials &amp; breakdowns</h2>
+<h4 id="h-a-from-the-people-who-made-the-songs-most-useful">A. From the people who made the songs (most useful)</h4>
+<div class="cards">
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=WLFzt33kHyk" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/WLFzt33kHyk/hqdefault.jpg" loading="lazy" alt="Producer Onionn analyzed Son Tung M-TP&#x27;s song Chay ngay di at WMW Session Vietnam 2019"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=WLFzt33kHyk" target="_blank" rel="noopener noreferrer">Producer Onionn analyzed Son Tung M-TP's song Chay ngay di at WMW Session Vietnam 2019</a></div><div class="cf"><span class="lbl">Channel:</span> fukyosuke (a re-upload; the description says "I don't own copyrights to this video")</div><div class="cf"><span class="lbl">What it shows:</span> Onionn walking through his own Chạy Ngay Đi production at a WMW session. 39.6K views.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=RFWrRxuUXu4" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/RFWrRxuUXu4/hqdefault.jpg" loading="lazy" alt="ONIONN - Hợp tác cùng Sơn Tùng-MTP và Chặng đường trở thành Producer, HIT MAKER #9"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=RFWrRxuUXu4" target="_blank" rel="noopener noreferrer">ONIONN - Hợp tác cùng Sơn Tùng-MTP và Chặng đường trở thành Producer, HIT MAKER #9</a>, full episode <a href="https://www.youtube.com/watch?v=arYPR0e_84E" target="_blank" rel="noopener noreferrer">here</a></div><div class="cf"><span class="lbl">Channel:</span> THAI SON BEATBOX</div><div class="cf"><span class="lbl">What it shows:</span> Interview with Onionn about working with Sơn Tùng and how he became a producer.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=Z8P8faByRH0" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/Z8P8faByRH0/hqdefault.jpg" loading="lazy" alt="Producer Onionn chia sẻ về quá trình hợp tác cùng Sơn Tùng M-TP"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=Z8P8faByRH0" target="_blank" rel="noopener noreferrer">Producer Onionn chia sẻ về quá trình hợp tác cùng Sơn Tùng M-TP</a></div><div class="cf"><span class="lbl">Channel:</span> Onionn Planet (Aug 2019)</div><div class="cf"><span class="lbl">What it shows:</span> Onionn on his collaboration with Sơn Tùng.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=FU1o2ZvucIs" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/FU1o2ZvucIs/hqdefault.jpg" loading="lazy" alt="LẠC TRÔI REMIX (LIVE VERSION), SƠN TÙNG M-TP &amp; Triple D @ 1900"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=FU1o2ZvucIs" target="_blank" rel="noopener noreferrer">LẠC TRÔI REMIX (LIVE VERSION), SƠN TÙNG M-TP &amp; Triple D @ 1900</a></div><div class="cf"><span class="lbl">Channel:</span> 1900 LE THÉÂTRE</div><div class="cf"><span class="lbl">What it shows:</span> Triple D performing his Lạc Trôi remix live with Sơn Tùng. 8.66M views.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=HZaShvbm8Q0" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/HZaShvbm8Q0/hqdefault.jpg" loading="lazy" alt="LẠC TRÔI (TRIPLE D REMIX), 360 DEGREE MV"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=HZaShvbm8Q0" target="_blank" rel="noopener noreferrer">LẠC TRÔI (TRIPLE D REMIX), 360 DEGREE MV</a></div><div class="cf"><span class="lbl">Channel:</span> Sơn Tùng M-TP Official</div><div class="cf"><span class="lbl">What it shows:</span> Official release of the Triple D remix.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=-vtBgNxMyZI" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/-vtBgNxMyZI/hqdefault.jpg" loading="lazy" alt="CHẠY NGAY ĐI (ONIONN REMIX)"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=-vtBgNxMyZI" target="_blank" rel="noopener noreferrer">CHẠY NGAY ĐI (ONIONN REMIX)</a></div><div class="cf"><span class="lbl">Channel:</span> Sơn Tùng M-TP Official</div><div class="cf"><span class="lbl">What it shows:</span> Onionn's own remix. Comparing it with the original shows how he re-produces his own beat.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=uLkf3xz0KnU" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/uLkf3xz0KnU/hqdefault.jpg" loading="lazy" alt="Có Chắc Yêu Là Đây (Onionn Remix Countdown 2021)"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=uLkf3xz0KnU" target="_blank" rel="noopener noreferrer">Có Chắc Yêu Là Đây (Onionn Remix Countdown 2021)</a></div><div class="cf"><span class="lbl">Channel:</span> Sơn Tùng M-TP Official (auto-generated "Topic" channel)</div><div class="cf"><span class="lbl">What it shows:</span> Official Onionn remix (audio).</div></div></div>
+</div>
+<p>I found <strong>no</strong> official production breakdown by Triple D or Marvey Muzique.</p>
+<h4 id="h-b-official-behind-the-scenes-making-of-videos-s-n-t-ng-m-tp">B. Official behind-the-scenes / making-of videos (Sơn Tùng M-TP Official)</h4>
+<div class="cards">
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=c7AceFuXuqc" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/c7AceFuXuqc/hqdefault.jpg" loading="lazy" alt="Lạc Trôi, Making MV"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=c7AceFuXuqc" target="_blank" rel="noopener noreferrer">Lạc Trôi, Making MV</a></div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=ivF9YQ4f4DA" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ivF9YQ4f4DA/hqdefault.jpg" loading="lazy" alt="Hãy Trao Cho Anh, MV Making"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=ivF9YQ4f4DA" target="_blank" rel="noopener noreferrer">Hãy Trao Cho Anh, MV Making</a>. The description repeats the credits (music producer ONIONN).</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=3AAHMU4-o4A" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/3AAHMU4-o4A/hqdefault.jpg" loading="lazy" alt="Có Chắc Yêu Là Đây, MV Making"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=3AAHMU4-o4A" target="_blank" rel="noopener noreferrer">Có Chắc Yêu Là Đây, MV Making</a></div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=LggaymnzDjc" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/LggaymnzDjc/hqdefault.jpg" loading="lazy" alt="Muộn Rồi Mà Sao Còn, Making MV"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=LggaymnzDjc" target="_blank" rel="noopener noreferrer">Muộn Rồi Mà Sao Còn, Making MV</a></div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=hmAXICsIPbE" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/hmAXICsIPbE/hqdefault.jpg" loading="lazy" alt="Come My Way, Behind The Scenes"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=hmAXICsIPbE" target="_blank" rel="noopener noreferrer">Come My Way, Behind The Scenes</a>, posted 9 Jun 2026, 1.1M views.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=oyh6tDcMP5w" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/oyh6tDcMP5w/hqdefault.jpg" loading="lazy" alt="CẢNH ĐUA BÒ TRONG MV &quot;COME MY WAY&quot; ĐƯỢC QUAY NHƯ THẾ NÀO?"><span class="play">▶</span></a><div class="cb"><div class="ct"><strong>Come My Way bullet time:</strong> <a href="https://www.youtube.com/watch?v=oyh6tDcMP5w" target="_blank" rel="noopener noreferrer">CẢNH ĐUA BÒ TRONG MV "COME MY WAY" ĐƯỢC QUAY NHƯ THẾ NÀO?</a> by OpenLive Group. Its description says its member company OMedia ran the <strong>Bullet Time</strong> rig for the Bảy Núi bull-race scene.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=TWUmlUXmglM" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/TWUmlUXmglM/hqdefault.jpg" loading="lazy" alt="Chạy Ngay Đi BTS"><span class="play">▶</span></a><div class="cb"><div class="ct"><strong>Unofficial:</strong> <a href="https://www.youtube.com/watch?v=TWUmlUXmglM" target="_blank" rel="noopener noreferrer">Chạy Ngay Đi BTS</a> on the fan channel "Sky Archive" <strong><span class="flag unv">[Unverified]</span></strong> (not an official channel).</div></div></div>
+</div>
+<h4 id="h-c-daw-remakes-and-tutorials-by-fans-and-independent-producer">C. DAW remakes and tutorials by fans and independent producers</h4>
+<p>Mostly FL Studio. These are third-party recreations, not the original project files.</p>
+<div class="cards">
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=G71M9wDgh98" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/G71M9wDgh98/hqdefault.jpg" loading="lazy" alt="Lạc Trôi (FL Studio Remake) [Free FLP], Piano Ver"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=G71M9wDgh98" target="_blank" rel="noopener noreferrer">Lạc Trôi (FL Studio Remake) [Free FLP], Piano Ver</a></div><div class="cf"><span class="lbl">Song:</span> Lạc Trôi</div><div class="cf"><span class="lbl">Channel:</span> MrTigK</div><div class="cf"><span class="lbl">Notes:</span> Remake with the project file</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=izDzQqUyF68" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/izDzQqUyF68/hqdefault.jpg" loading="lazy" alt="Lạc Trôi, Cinematic Remake"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=izDzQqUyF68" target="_blank" rel="noopener noreferrer">Lạc Trôi, Cinematic Remake</a></div><div class="cf"><span class="lbl">Song:</span> Lạc Trôi</div><div class="cf"><span class="lbl">Channel:</span> Nhạc Chu Du</div><div class="cf"><span class="lbl">Notes:</span> Reinterpretation rather than a copy. A good example of "remake, then change it".</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=MNzaYI9DDuM" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/MNzaYI9DDuM/hqdefault.jpg" loading="lazy" alt="CHẠY NGAY ĐI, BEAT [REMAKE]"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=MNzaYI9DDuM" target="_blank" rel="noopener noreferrer">CHẠY NGAY ĐI, BEAT [REMAKE]</a></div><div class="cf"><span class="lbl">Song:</span> Chạy Ngay Đi</div><div class="cf"><span class="lbl">Channel:</span> Akasu</div><div class="cf"><span class="lbl">Notes:</span> Beat remake; the description asks people not to use it commercially</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=o843OH0LW6I" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/o843OH0LW6I/hqdefault.jpg" loading="lazy" alt="Hướng Dẫn: Làm Beat Hãy Trao Cho Anh, FL Studio 11"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=o843OH0LW6I" target="_blank" rel="noopener noreferrer">Hướng Dẫn: Làm Beat Hãy Trao Cho Anh, FL Studio 11</a></div><div class="cf"><span class="lbl">Song:</span> Hãy Trao Cho Anh</div><div class="cf"><span class="lbl">Channel:</span> Keyri Phan Official</div><div class="cf"><span class="lbl">Notes:</span> Step-by-step beat tutorial</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=BRnT4iuzvOM" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/BRnT4iuzvOM/hqdefault.jpg" loading="lazy" alt="Hướng Dẫn Làm Nhạc Moombahton Như Onion (Hãy Trao Cho Anh), FL Studio"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=BRnT4iuzvOM" target="_blank" rel="noopener noreferrer">Hướng Dẫn Làm Nhạc Moombahton Như Onion (Hãy Trao Cho Anh), FL Studio</a></div><div class="cf"><span class="lbl">Song:</span> Hãy Trao Cho Anh</div><div class="cf"><span class="lbl">Channel:</span> VBK Music</div><div class="cf"><span class="lbl">Notes:</span> Teaches the <strong>genre</strong> (moombahton) using the song as the example. This is the inspiration approach.</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=YYHC_AB67U4" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/YYHC_AB67U4/hqdefault.jpg" loading="lazy" alt="[Tutorial/Hướng dẫn FL Studio] Muộn rồi mà sao còn"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=YYHC_AB67U4" target="_blank" rel="noopener noreferrer">[Tutorial/Hướng dẫn FL Studio] Muộn rồi mà sao còn</a></div><div class="cf"><span class="lbl">Song:</span> Muộn Rồi Mà Sao Còn</div><div class="cf"><span class="lbl">Channel:</span> TranDucToan</div><div class="cf"><span class="lbl">Notes:</span> Detailed tutorial</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=siJ28EE4LuE" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/siJ28EE4LuE/hqdefault.jpg" loading="lazy" alt="[Tutorial + Free FLP] MUỘN RỒI MÀ SAO CÒN, Remake by MyT"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=siJ28EE4LuE" target="_blank" rel="noopener noreferrer">[Tutorial + Free FLP] MUỘN RỒI MÀ SAO CÒN, Remake by MyT</a></div><div class="cf"><span class="lbl">Song:</span> Muộn Rồi Mà Sao Còn</div><div class="cf"><span class="lbl">Channel:</span> MyT</div><div class="cf"><span class="lbl">Notes:</span> Lists the plugins used: Ozone 9, 808 Bass Module III, Kickstart, FabFilter Pro-Q 3, Sylenth1</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=TzCGsFXeBBI" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/TzCGsFXeBBI/hqdefault.jpg" loading="lazy" alt="(FLP) Muộn Rồi Mà Sao Còn (Remake Stock Plugins)"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=TzCGsFXeBBI" target="_blank" rel="noopener noreferrer">(FLP) Muộn Rồi Mà Sao Còn (Remake Stock Plugins)</a></div><div class="cf"><span class="lbl">Song:</span> Muộn Rồi Mà Sao Còn</div><div class="cf"><span class="lbl">Channel:</span> kisstherajn2</div><div class="cf"><span class="lbl">Notes:</span> Uses only FL Studio's built-in plugins</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=V8pc9xYRI9k" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/V8pc9xYRI9k/hqdefault.jpg" loading="lazy" alt="Làm Nhạc Trên FL Studio, Making My Way"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=V8pc9xYRI9k" target="_blank" rel="noopener noreferrer">Làm Nhạc Trên FL Studio, Making My Way</a></div><div class="cf"><span class="lbl">Song:</span> Making My Way</div><div class="cf"><span class="lbl">Channel:</span> Hồ Thiện Quân</div><div class="cf"><span class="lbl">Notes:</span> Remake walkthrough</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=WYwJ5aRRpLU" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/WYwJ5aRRpLU/hqdefault.jpg" loading="lazy" alt="MAKING MY WAY, tden REMAKE trong 30 phút [FLP]"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=WYwJ5aRRpLU" target="_blank" rel="noopener noreferrer">MAKING MY WAY, tden REMAKE trong 30 phút [FLP]</a></div><div class="cf"><span class="lbl">Song:</span> Making My Way</div><div class="cf"><span class="lbl">Channel:</span> T-Đen</div><div class="cf"><span class="lbl">Notes:</span> 30-minute remake</div></div></div>
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=uJSa9WDTPqU" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/uJSa9WDTPqU/hqdefault.jpg" loading="lazy" alt="Hướng dẫn nhạc, COME MY WAY (Ultra Hi-End), Flp Free, P1"><span class="play">▶</span></a><div class="cb"><div class="ct"><a href="https://www.youtube.com/watch?v=uJSa9WDTPqU" target="_blank" rel="noopener noreferrer">Hướng dẫn nhạc, COME MY WAY (Ultra Hi-End), Flp Free, P1</a></div><div class="cf"><span class="lbl">Song:</span> Come My Way</div><div class="cf"><span class="lbl">Channel:</span> Âm thanh Đẳng Cấp Quốc Tế (XTùng Mastering Hi-End)</div><div class="cf"><span class="lbl">Notes:</span> Description says it is reworked rather than copied (Serum 2, Pianoteq 9, Kontakt). 953 views.</div></div></div>
+</div>
+<p><strong>Secondary resources:</strong></p>
+<div class="cards">
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=QlYTblAJed0" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/QlYTblAJed0/hqdefault.jpg" loading="lazy" alt="HƯỚNG DẪN &quot;NƠI NÀY CÓ ANH&quot;, How to play on the Piano"><span class="play">▶</span></a><div class="cb"><div class="ct">Piano: <a href="https://www.youtube.com/watch?v=QlYTblAJed0" target="_blank" rel="noopener noreferrer">HƯỚNG DẪN "NƠI NÀY CÓ ANH", How to play on the Piano</a> (Piano PM Music).</div></div></div>
+</div>
+<ul><li>
+Reaction videos by professionals:
+<ul><li>
+<a href="https://www.youtube.com/watch?v=sKMKWRH3me8" target="_blank" rel="noopener noreferrer">PRODUCER REACTION, Sơn Tùng M-TP tại Redbull Húc Fest</a> (LongLangThang).
+</li><li>
+<a href="https://www.youtube.com/watch?v=kb34z4-WEIg" target="_blank" rel="noopener noreferrer">Vocal Coach Reacts, MAKING MY WAY</a> (Anh Bảo Mẹo Thanh Nhạc).
+</li></ul>
+</li></ul>
+<div class="cards">
+<div class="card"><a class="thumb" href="https://www.youtube.com/watch?v=iYXI8-9AO3Y" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/iYXI8-9AO3Y/hqdefault.jpg" loading="lazy" alt="Come My Way (Live Performance), Open Mic"><span class="play">▶</span></a><div class="cb"><div class="ct">Live performance: <a href="https://www.youtube.com/watch?v=iYXI8-9AO3Y" target="_blank" rel="noopener noreferrer">Come My Way (Live Performance), Open Mic</a> (Genius).</div></div></div>
+</div>
+<p><strong>Gaps:</strong></p>
+<ul><li>
+No English-language producer breakdown of any Sơn Tùng track turned up in these searches.
+</li><li>
+No Có Chắc Yêu Là Đây DAW tutorial was found; there are only karaoke instrumentals and type beats.
+</li><li>
+No Come My Way tutorial beyond the one above.
+</li></ul>
+</section>
+<section id="plagiarism"><h2><span class="em">⚖️</span>Plagiarism cases</h2>
+<p class="legend"><span class="badge ruled">ruled</span> an authority or organiser decided · <span class="badge settled">settled</span> resolved privately · <span class="badge accusation">accusation</span> public/media only · <span class="badge unresolved">unresolved</span> admitted or disputed but no final outcome</p><div class="tw"><table><thead><tr><th>Case</th><th>Badge</th><th>Outcome label in the source file</th></tr></thead><tbody><tr><td><a href="#h-2014-borrowed-beats-on-early-hits-admitted-chart-removal">2014: borrowed beats on early hits</a></td><td><span class="badge ruled">ruled</span></td><td>Admitted + chart removal</td></tr><tr><td><a href="#h-late-2014-ch-c-ai-s-v-vs-because-i-miss-you-jung-yong-hwa-ru">Late 2014: Chắc Ai Đó Sẽ Về vs "Because I Miss You" (Jung Yong-hwa)</a></td><td><span class="badge ruled">ruled</span></td><td>Ruled (administrative)</td></tr><tr><td><a href="#h-2016-ch-ng-ta-kh-ng-thu-c-v-nhau-vs-we-don-t-talk-anymore-ac">2016: Chúng Ta Không Thuộc Về Nhau vs "We Don't Talk Anymore"</a></td><td><span class="badge accusation">accusation</span></td><td>Accusation only</td></tr><tr><td><a href="#h-feb-2021-ch-ng-ta-c-a-hi-n-t-i-vs-gc-s-r-b-all-night-settled">Feb 2021: Chúng Ta Của Hiện Tại vs GC's "R&amp;B All Night"</a></td><td><span class="badge settled">settled</span></td><td>Settled</td></tr><tr><td><a href="#h-feb-2021-c-ch-c-y-u-l-y-vs-robin-wesley-s-lucky-accusation-n">Feb 2021: Có Chắc Yêu Là Đây vs Robin Wesley's "Lucky"</a></td><td><span class="badge unresolved">unresolved</span></td><td>Accusation, no public resolution</td></tr><tr><td><a href="#h-may-2023-making-my-way-vs-unforgettable-french-montana-ft-sw">May 2023: Making My Way vs "Unforgettable" (French Montana ft. Swae Lee)</a></td><td><span class="badge accusation">accusation</span></td><td>Accusation only</td></tr><tr><td><a href="#h-jun-2026-come-my-way-set-vs-l-giang-s-installation-t-n-ch-ve">Jun 2026: Come My Way set vs Lê Giang's installation "Tàn Chỉ / Vestige of the Land" (2017)</a></td><td><span class="badge unresolved">unresolved</span></td><td>Admitted by the set designers + MV edited; legal outcome open</td></tr><tr><td>2022, "There's No One At All" (from the starter brief; not a plagiarism case)</td><td><span class="badge ruled">ruled</span></td><td>fined</td></tr></tbody></table></div><p><strong>Outcome labels:</strong></p>
+<ul><li>
+<strong>Accusation:</strong> raised by the public or media only.
+</li><li>
+<strong>Admitted:</strong> the artist or team acknowledged the use.
+</li><li>
+<strong>Ruled:</strong> an authority decided.
+</li><li>
+<strong>Settled:</strong> the parties resolved it privately.
+</li><li>
+<strong>Edited:</strong> the work was changed.
+</li></ul>
+<h4 id="h-2014-borrowed-beats-on-early-hits-admitted-chart-removal">2014: borrowed beats on early hits. <strong>Admitted + chart removal</strong></h4>
+<ul><li>
+<strong>What was similar:</strong> netizens matched the beats of Cơn Mưa Ngang Qua (to a 2010 Korean song by Namolla Family), Em Của Ngày Hôm Qua (to EXID's "Every Night"), Em Đừng Đi and others (<a href="https://thanhnien.vn/tranh-cai-nay-lua-ve-vu-son-tung-m-tp-dao-nhac-185643333.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>His words (4 Jun 2014, via his manager):</strong> <em>"phần giai điệu là do tôi sáng tác, phần beat nhạc do tôi lấy nguồn trên mạng… Việc tôi sử dụng và lấy cảm hứng từ beat nhạc ngoại thì tôi thừa nhận"</em>. In English: "the melody is mine; the beat I took from the internet… I admit using and taking inspiration from foreign beats". He called it <em>"cách làm quen thuộc và xu hướng sáng tác hiện nay của nhiều nghệ sĩ trẻ"</em>, "a familiar practice and a current songwriting trend among many young artists" (<a href="https://vietnamnet.vn/son-tung-m-tp-toi-chua-thay-minh-can-phai-moc-sung-179299.html" target="_blank" rel="noopener noreferrer">VietNamNet</a>).
+<ul><li>
+On Em Của Ngày Hôm Qua he said he used an online beat and had someone remake it for better sound quality.
+</li><li>
+He said his team had since steered him away from using foreign beats.
+</li></ul>
+</li><li>
+<strong>Outcome:</strong>
+<ul><li>
+The <em>Bài hát yêu thích</em> chart removed Cơn Mưa Ngang Qua, Đừng Về Trễ and Em Của Ngày Hôm Qua from 14 Jun 2014. 11 of the 13 jury members who voted agreed.
+</li><li>
+The organisers said he had not broken the contest rules, but had breached professional ethics by using beats "không xin phép, không rõ nguồn gốc" (without permission, of unknown origin). His earlier awards were not revoked (<a href="https://thanhnien.vn/rut-3-ca-khuc-cua-son-tung-m-tp-khoi-bai-hat-yeu-thich-185696.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>, <a href="https://vov.vn/van-hoa/am-nhac/son-tung-bi-phat-go-3-ca-khuc-khoi-bai-hat-yeu-thich-332150.vov" target="_blank" rel="noopener noreferrer">VOV</a>).
+</li><li>
+VOV says his label's music director, Huy Tuấn, asked for the songs to be withdrawn.
+</li></ul>
+</li></ul>
+<h4 id="h-late-2014-ch-c-ai-s-v-vs-because-i-miss-you-jung-yong-hwa-ru">Late 2014: Chắc Ai Đó Sẽ Về vs "Because I Miss You" (Jung Yong-hwa). <strong>Ruled (administrative)</strong></h4>
+<ul><li>
+<strong>What was similar:</strong> the Department of Performing Arts found both songs use a slow-rock 6/8 rhythm at the same tempo in C major. It found the melodies "hoàn toàn khác nhau" (completely different) and the lyrics unrelated (<a href="https://thanhnien.vn/cuc-ntbd-de-nghi-cap-phep-cho-ca-khuc-bi-nghi-dao-nhac-cua-son-tung-m-tp-185433259.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>A separate panel disagreed:</strong> set up through the Vietnam Musicians' Association and the music copyright centre VCPMC, it had found the songs <strong>60–70% similar</strong> (<a href="https://vov.vn/van-hoa/am-nhac/ca-khuc-chac-ai-do-se-ve-phai-thay-phan-beat-moi-duoc-phep-luu-hanh-369109.vov" target="_blank" rel="noopener noreferrer">VOV</a>).
+</li><li>
+<strong>Korean side:</strong> an email from FNC Entertainment, Jung Yong-hwa's agency, said that despite similarities it did not regard this as "ăn cắp bản quyền" (copyright theft) (<a href="https://baoxaydung.vn/phia-han-quoc-xac-nhan-son-tung-khong-34dao-nhac34-19290472.htm" target="_blank" rel="noopener noreferrer">Báo Xây dựng</a>). The ministry panel later said the email had no legal weight because it did not come from the author.
+</li><li>
+<strong>His position:</strong> he said the melody and lyrics were his. The ministry's spokesman said he "thừa nhận phần beat (bản phối) là không phải của anh ta" (admitted the beat, i.e. the arrangement, was not his) (Báo Xây dựng).
+</li><li>
+<strong>Outcome, 5 Dec 2014:</strong> the culture ministry's panel ruled that the beat/harmony was "bị ảnh hưởng rất lớn" (very heavily influenced) by Because I Miss You. He had to replace it before the song could circulate. It was treated as a first violation, so he got a reminder, with fines threatened for a repeat (<a href="https://vnexpress.net/ca-khuc-cua-son-tung-bi-ket-luan-anh-huong-nhac-han-ve-hoa-am-3116588.html" target="_blank" rel="noopener noreferrer">VnExpress</a>).
+</li></ul>
+<h4 id="h-2016-ch-ng-ta-kh-ng-thu-c-v-nhau-vs-we-don-t-talk-anymore-ac">2016: Chúng Ta Không Thuộc Về Nhau vs "We Don't Talk Anymore". <strong>Accusation only</strong></h4>
+<ul><li>
+Producer Triple D said he made the beat himself: <em>"Các bài nhạc trùng vòng hoà âm là điều rất bình thường"</em> ("songs sharing a chord loop is very normal"). He added that the songs share only the loop and the Tropical House genre, and "chả đoạn nào giống đoạn nào, kể cả về sound tiếng" ("no section is alike, not even the sounds") (<a href="https://www.saostar.vn/am-nhac/nguoi-hoa-hit-moi-son-tung-triple-d-len-tieng-ban-phoi-hoan-toan-la-cua-minh-658229.html" target="_blank" rel="noopener noreferrer">Saostar, 4 Aug 2016</a>).
+</li><li>
+No ruling was found.
+</li></ul>
+<h4 id="h-feb-2021-ch-ng-ta-c-a-hi-n-t-i-vs-gc-s-r-b-all-night-settled">Feb 2021: Chúng Ta Của Hiện Tại vs GC's "R&amp;B All Night". <strong>Settled</strong></h4>
+<ul><li>
+<strong>What happened:</strong> UK beat-maker GC (Gary) filed a YouTube copyright claim and the MV was blocked on 22 Feb 2021 (<a href="https://thanhnien.vn/mv-chung-ta-cua-hien-tai-cua-son-tung-m-tp-bi-danh-ban-quyen-vi-dao-nhac-1851039886.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>GC's account:</strong> the producer "đã thừa nhận rằng anh ta sao chép sản phẩm của tôi" (admitted copying my work) (Thanh Niên). Elsewhere GC said the team admitted using his beat "để tham khảo" (as a reference), but the arrangement, harmony and hook were too similar to call it reference (<a href="https://dantri.com.vn/giai-tri/producer-gc-da-lam-viec-voi-cong-ty-son-tung-m-tp-ve-on-ao-dao-nhac-20210224150122733.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>).
+</li><li>
+<strong>Settlement:</strong> after talking to M-TP's CEO, GC wrote "we reached agreement… I've reinstated the video". The MV returned with its view count intact (Dân trí).
+</li><li>
+<strong>M-TP Entertainment's only public words:</strong> <em>"Âm nhạc không biên giới. Một người bạn mới của M-TP Entertainment ở nơi phương xa"</em> ("Music has no borders. A new friend of M-TP Entertainment from far away") (<a href="https://www.sggp.org.vn/dao-nhac-ranh-gioi-mong-manh-post585245.html" target="_blank" rel="noopener noreferrer">SGGP</a>).
+</li><li>
+Talk of a US$100K payment is <strong><span class="flag rum">[Rumour]</span></strong>: Dân trí says "có thông tin cho rằng" ("there is information that").
+</li></ul>
+<h4 id="h-feb-2021-c-ch-c-y-u-l-y-vs-robin-wesley-s-lucky-accusation-n">Feb 2021: Có Chắc Yêu Là Đây vs Robin Wesley's "Lucky". <strong>Accusation, no public resolution</strong></h4>
+<ul><li>
+<strong>What happened:</strong> Dutch producer Robin Wesley re-posted his beat "Lucky" (dated 16 Nov 2019, "only usable with permission") titled as the Có Chắc Yêu Là Đây original instrumental (<a href="https://thanhnien.vn/son-tung-m-tp-tiep-tuc-bi-nha-san-xuat-ha-lan-to-dao-chac-co-yeu-la-day-1851040167.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>His statement:</strong> "Rõ ràng là những sai lầm đã diễn ra… chúng tôi đang cố gắng giải quyết vấn đề này với nghệ sĩ" ("Clearly mistakes have been made… we are trying to resolve this with the artist") (Thanh Niên; <a href="https://www.sggp.org.vn/dao-nhac-ranh-gioi-mong-manh-post585245.html" target="_blank" rel="noopener noreferrer">SGGP</a>).
+</li><li>
+<strong>M-TP's response:</strong> a representative declined to comment (<a href="https://vtcnews.vn/son-tung-mtp-lai-bi-nha-san-xuat-o-ha-lan-to-dao-nhac-ar597732.html" target="_blank" rel="noopener noreferrer">VTC/Zing</a>).
+</li><li>
+<strong>Outcome:</strong> none reported.
+</li><li>
+Both 2021 tracks were produced by Onionn. Kenh14 notes two of his Sơn Tùng productions drew plagiarism suspicion (<a href="https://kenh14.vn/hon-3-nam-onionn-lam-nhac-cho-son-tung-so-luong-it-oi-dem-tren-dau-ngon-tay-da-the-2-san-pham-con-vuong-nghi-van-dao-nhac-20220105151348621.chn" target="_blank" rel="noopener noreferrer">Kenh14</a>). I found no statement from Onionn himself.
+</li></ul>
+<h4 id="h-may-2023-making-my-way-vs-unforgettable-french-montana-ft-sw">May 2023: Making My Way vs "Unforgettable" (French Montana ft. Swae Lee). <strong>Accusation only</strong></h4>
+<ul><li>
+<strong>The claim:</strong> fans said the drums and intro were alike (<a href="https://dantri.com.vn/van-hoa/ca-khuc-moi-cua-son-tung-m-tp-bi-nghi-dao-nhac-van-lap-thanh-tich-quoc-te-20230506150010729.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>). Dân trí asked his team and got no reply.
+</li><li>
+<strong>Tiền Phong's analysis:</strong> the melody and chord loop are <strong>not</strong> the same. The shared element is the reggaeton/dancehall drum pattern at about 100 BPM, which is "yếu tố cơ bản của mỗi dòng nhạc" (a basic element of each genre). There was "chưa đủ cơ sở" (not enough basis) to call it plagiarism (<a href="https://tienphong.vn/son-tung-co-dao-nhac-ca-khuc-ty-view-khong-post1532195.tpo" target="_blank" rel="noopener noreferrer">Tiền Phong</a>).
+</li></ul>
+<h4 id="h-jun-2026-come-my-way-set-vs-l-giang-s-installation-t-n-ch-ve">Jun 2026: Come My Way set vs Lê Giang's installation "Tàn Chỉ / Vestige of the Land" (2017). <strong>Admitted by the set designers + MV edited; legal outcome open</strong></h4>
+<ul><li>
+<strong>What was similar:</strong> the after-credits ruin set, with calcified reliefs and broken northern communal-house (đình làng) architecture around the column bases. The arts group Hanoi Grapevine flagged it on 2 Jun (<a href="https://vcca.org.vn/ban-quyen-tac-gia/len-tieng-ve-nghi-van-vi-pham-ban-quyen-trong-mv-come-my-way-antiantiart-va-m-tp-entertainment-noi-gi-2" target="_blank" rel="noopener noreferrer">VCCA</a>).
+</li><li>
+<strong>Microwave Soups (art direction and set design):</strong> admitted it used her work as a reference <strong>without permission or credit</strong> and apologised (<a href="https://thanhnien.vn/e-kip-thuc-hien-mv-come-my-way-cua-son-tung-m-tp-xin-loi-nghe-si-le-giang-185260603125537417.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>Antiantiart (production company):</strong> took responsibility and said M-TP Talent was only the client (VCCA).
+</li><li>
+<strong>Lê Giang:</strong> did not accept the apology (<a href="https://cuoi.tuoitre.vn/son-tung-m-tp-cat-bo-mv-bi-to-dao-nhai-hanh-vi-vi-pham-da-xay-ra-thi-van-co-the-bi-kien-20260609173819498.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ Cười</a>).
+</li><li>
+<strong>M-TP Talent, 9 Jun:</strong> cut the scene and said the edit <em>"không phản ánh hay thừa nhận bất kỳ kết luận pháp lý nào"</em> ("does not reflect or admit any legal conclusion") (<a href="https://vietnamnet.vn/son-tung-m-tp-thang-tay-xoa-so-canh-bi-to-dao-nhai-trong-mv-come-my-way-2524297.html" target="_blank" rel="noopener noreferrer">VietNamNet</a>, <a href="https://dantri.com.vn/giai-tri/son-tung-m-tp-cat-phan-doan-gay-tranh-cai-khoi-mv-sau-on-ao-dao-nhai-20260609154042029.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>).
+</li><li>
+<strong>Lawyer's view:</strong> removing the scene does not erase liability if an infringement happened (Tuổi Trẻ Cười).
+</li></ul>
+<h4 id="h-technique-and-coincidence-as-inspiration-what-the-record-ac">"Technique and coincidence as inspiration"? What the record actually says</h4>
+<ul><li>
+<strong>"Inspiration" is his own word, but only from 2014.</strong> He <em>admitted</em> using foreign beats and called it "lấy cảm hứng" (taking inspiration). The authorities treated that as using someone else's beat, not as inspiration.
+</li><li>
+<strong>No source quotes Sơn Tùng or M-TP using "coincidence" (trùng hợp).</strong> The nearest is Triple D's 2016 point that shared chord loops in the same genre are normal.
+</li><li>
+<strong>In 2021 the "reference" (tham khảo) framing came from GC's account of the team.</strong> GC rejected it as an excuse.
+</li><li>
+<strong>Since 2021 the pattern is silence or settlement.</strong> Dân trí notes he "luôn chọn cách im lặng" (always chooses to stay silent) (<a href="https://dantri.com.vn/van-hoa/ca-khuc-moi-cua-son-tung-m-tp-bi-nghi-dao-nhac-van-lap-thanh-tich-quoc-te-20230506150010729.htm" target="_blank" rel="noopener noreferrer">Dân trí 2023</a>).
+</li></ul><h3>From the starter brief: controversies (accusation vs outcome)</h3><ul><li>
+<strong>2014, borrowed beats:</strong> He admitted using foreign backing tracks but called it "inspiration". Huy Tuấn pulled several songs from <em>Bài hát yêu thích</em> (<a href="https://vnexpress.net/son-tung-m-tp-danh-tieng-va-thi-phi-song-hanh-3179762.html" target="_blank" rel="noopener noreferrer">VnExpress</a>).
+</li><li>
+<strong>2014, "Chắc Ai Đó Sẽ Về": official ruling.</strong> A Culture Ministry panel found the beat "heavily influenced" by "Because I Miss You". The song had to be re-arranged before it could circulate (<a href="https://vnexpress.net/ca-khuc-cua-son-tung-bi-ket-luan-anh-huong-nhac-han-ve-hoa-am-3116588.html" target="_blank" rel="noopener noreferrer">VnExpress, 5 Dec 2014</a>).
+</li><li>
+<strong>2021, "Chúng Ta Của Hiện Tại": settled.</strong> UK producer GC's copyright claim got the MV hidden from YouTube. He restored it after talks with M-TP's CEO. A reported US$100K payment is <strong>rumour</strong> (<a href="https://dantri.com.vn/giai-tri/producer-gc-da-lam-viec-voi-cong-ty-son-tung-m-tp-ve-on-ao-dao-nhac-20210224150122733.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>).
+</li><li>
+<strong>2021, "Có Chắc Yêu Là Đây": accusation, outcome unknown.</strong> Dutch producer Robin Wesley said the beat matches his "Lucky" and said he was "resolving it" (<a href="https://thanhnien.vn/son-tung-m-tp-tiep-tuc-bi-nha-san-xuat-ha-lan-to-dao-chac-co-yeu-la-day-1851040167.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li><li>
+<strong>2022, "There's No One At All": fined.</strong> Over the MV's suicide scene, his company was fined VND 70M (about US$3,000) and the video was ordered destroyed (<a href="https://news.tuoitre.vn/son-tung-m-tps-company-fined-3000-for-youtube-release-of-theres-no-one-at-all-10366982.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ News</a>, <a href="https://bvhttdl.gov.vn/thanh-tra-bo-vhttdl-xu-phat-cong-ty-cua-son-tung-m-tp-70-trieu-dong-20220505172134426.htm" target="_blank" rel="noopener noreferrer">Ministry</a>).
+</li><li>
+<strong>2023, "Making My Way": netizen accusation only.</strong> Listeners compared it to French Montana's "Unforgettable" (<a href="https://dantri.com.vn/van-hoa/ca-khuc-moi-cua-son-tung-m-tp-bi-nghi-dao-nhac-van-lap-thanh-tich-quoc-te-20230506150010729.htm" target="_blank" rel="noopener noreferrer">Dân trí</a>).
+</li><li>
+<strong>2026, Come My Way set:</strong> see Q4.
+</li></ul>
+</section>
+<section id="borrow"><h2><span class="em">🧠</span>How to borrow without copying</h2>
+<h3 id="h-3-how-to-do-it-legitimately-inspiration-vs-copying-dj-produc">3. How to do it legitimately: inspiration vs copying (DJ/producer learner)</h3>
+<p><em>General information, mostly US law plus industry practice. Not legal advice. Laws differ by country.</em></p>
+<h4 id="h-generally-free-to-use-ideas-and-building-blocks">Generally free to use (ideas and building blocks)</h4>
+<ul><li>
+<strong>Ideas, methods and systems</strong> are not protected; only their specific expression is (<a href="https://www.copyright.gov/circs/circ33.pdf" target="_blank" rel="noopener noreferrer">US Copyright Office, Circular 33</a>). Production <em>techniques</em> fall here: sidechain, the way a drop is built, a vocal-chop method.
+</li><li>
+<strong>"Common property" musical material</strong> is not original authorship: scales, arpeggios, "chord symbols based on standard chord progressions" (<a href="https://www.copyright.gov/comp3/chap800/ch800-performing-arts.pdf" target="_blank" rel="noopener noreferrer">Compendium III §802.5(A)</a>).
+</li><li>
+<strong>Court rulings:</strong>
+<ul><li>
+Descending chromatic scales, arpeggios and short note sequences are "common musical elements" (<a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2020/03/09/16-56057.pdf" target="_blank" rel="noopener noreferrer">Skidmore v. Led Zeppelin, 9th Cir. 2020</a>).
+</li><li>
+"Commonplace musical elements… building blocks belong in the public domain". Katy Perry's "Dark Horse" was found not to infringe (<a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2022/03/10/20-55401.pdf" target="_blank" rel="noopener noreferrer">Gray v. Hudson, 9th Cir. 2022</a>).
+</li></ul>
+</li><li>
+<strong>Genre drum patterns and tempo:</strong> the Making My Way analysis above is the practical example (<a href="https://tienphong.vn/son-tung-co-dao-nhac-ca-khuc-ty-view-khong-post1532195.tpo" target="_blank" rel="noopener noreferrer">Tiền Phong</a>). Copying a <em>specific programmed beat or arrangement</em> is a different matter (see below).
+</li></ul>
+<h4 id="h-risky">Risky</h4>
+<ul><li>
+<strong>Melody/topline and distinctive hooks.</strong> These are the core of a musical work: melody, rhythm, harmony and lyrics are its elements (<a href="https://www.copyright.gov/comp3/chap800/ch800-performing-arts.pdf" target="_blank" rel="noopener noreferrer">Compendium §802.3</a>).
+</li><li>
+<strong>Someone else's beat or arrangement.</strong> This is exactly what sank Chắc Ai Đó Sẽ Về. Vietnam's culture ministry said the beat (hòa âm) is protected "cũng như giai điệu và ca từ" (just like melody and lyrics) (<a href="https://vnexpress.net/ca-khuc-cua-son-tung-bi-ket-luan-anh-huong-nhac-han-ve-hoa-am-3116588.html" target="_blank" rel="noopener noreferrer">VnExpress 2014</a>).
+<ul><li>
+The GC and Robin Wesley cases show that online "type beats" are owned. Using one without a licence can get a video blocked (<a href="https://thanhnien.vn/mv-chung-ta-cua-hien-tai-cua-son-tung-m-tp-bi-danh-ban-quyen-vi-dao-nhac-1851039886.htm" target="_blank" rel="noopener noreferrer">Thanh Niên</a>).
+</li></ul>
+</li><li>
+<strong>Samples of actual recordings, even tiny ones.</strong> US 6th Circuit: "Get a license or do not sample" (<a href="https://www.opn.ca6.uscourts.gov/opinions.pdf/04a0297p-06.pdf" target="_blank" rel="noopener noreferrer">Bridgeport v. Dimension Films, 2005</a>). Re-playing a part yourself avoids the <em>recording</em> right but not the <em>composition</em> right.
+</li><li>
+<strong>Visual and set references</strong> (MV makers take note). Using an artwork as a reference without permission or credit led to the Come My Way edit (above).
+</li></ul>
+<h4 id="h-how-to-clear-a-sample">How to clear a sample</h4>
+<ol><li>
+Identify <strong>two owners</strong>:
+<ul><li>
+the <strong>master</strong> (the recording, usually the label);
+</li><li>
+the <strong>composition/publishing</strong> (the songwriters, usually a publisher).
+<p class="cont">You need permission from both (<a href="https://www.tracklib.com/blog/music-clearance" target="_blank" rel="noopener noreferrer">Tracklib</a>, <a href="https://artists.spotify.com/en/blog/the-dos-and-donts-of-sample-clearances" target="_blank" rel="noopener noreferrer">Spotify for Artists</a>, <a href="https://www.apraamcos.com.au/resources/creativity/sampling" target="_blank" rel="noopener noreferrer">APRA AMCOS</a>).</p>
+</li></ul>
+</li><li>
+Ask <strong>before release</strong>, in writing. Expect a fee and/or a share of royalties, and expect paperwork (Spotify for Artists).
+</li><li>
+Alternatives:
+<ul><li>
+pre-cleared sample services such as Tracklib, which handles the licence and a revenue share (<a href="https://www.tracklib.com/blog/music-clearance" target="_blank" rel="noopener noreferrer">Tracklib</a>);
+</li><li>
+royalty-free sample packs, after checking their licence;
+</li><li>
+re-playing the part (you still need the publishing licence).
+</li></ul>
+</li></ol>
+<h4 id="h-type-beats-leasing-vs-exclusive">Type beats: leasing vs exclusive</h4>
+<ul><li>
+On BeatStars, <strong>non-exclusive licences are leases</strong> with limited terms set by each producer. <strong>Exclusive</strong> deals generally transfer ownership. Read the licence on the cart page before buying (<a href="https://help.beatstars.com/hc/en-us/articles/360035466813-What-are-the-differences-between-the-available-licenses-and-terms" target="_blank" rel="noopener noreferrer">BeatStars Help</a>, <a href="https://blog.beatstars.com/posts/selling-vs-leasing-exclusive-beats-right-way" target="_blank" rel="noopener noreferrer">BeatStars blog</a>).
+</li><li>
+<strong>Practical rules:</strong>
+<ul><li>
+Keep the receipt and licence.
+</li><li>
+Respect stream/sale caps.
+</li><li>
+Credit the producer.
+</li><li>
+A "free" beat tagged "for non-profit use" is <em>not</em> licensed for a commercial release. The Akasu remake above says exactly that.
+</li></ul>
+</li></ul>
+<h4 id="h-study-by-remaking-then-make-it-yours">Study by remaking, then make it yours</h4>
+<p>Berklee Online calls copying a song "one of the best ways to hone your production skills" (<a href="https://online.berklee.edu/takenote/best-way-to-learn-music-production-copy-a-song/" target="_blank" rel="noopener noreferrer">Berklee Take Note</a>). EDMProd recommends remakes for improving as a producer (<a href="https://www.edmprod.com/remake-music/" target="_blank" rel="noopener noreferrer">EDMProd</a>). MusicRadar warns against copying other artists' creative decisions from reference tracks (<a href="https://www.musicradar.com/music-tech/reference-tracks-can-be-your-secret-weapon-when-mixing-but-be-mindful-of-replicating-other-artists-creative-decisions" target="_blank" rel="noopener noreferrer">MusicRadar</a>).</p>
+<p>A workflow built from those sources:</p>
+<ol><li>
+Load the track, match its BPM and key, and mark the sections.
+</li><li>
+Rebuild it one layer at a time (drums, bass, chords, lead, FX, arrangement) and A/B against the original. <strong>This version is study only: don't release it.</strong>
+</li><li>
+Write down the <em>techniques</em> you learned, for example "moombahton dembow pattern + plucked lead" (that is how the VBK tutorial above teaches Hãy Trao Cho Anh).
+</li><li>
+Start a new project from those techniques with <strong>your own melody, chords voicing, drums and sounds</strong>. Change the tempo, key and groove too.
+</li><li>
+Before you release, compare it with the original: does any melody, hook or recognisable section survive? If yes, rewrite it or get a licence.
+</li><li>
+Credit and license anything you didn't make (samples, leased beats, co-writers).
+</li></ol>
+<h4 id="h-vietnam-from-the-sources-above-only">Vietnam, from the sources above only</h4>
+<ul><li>
+The ministry treats the <strong>beat/arrangement as protected</strong>, like melody and lyrics (VnExpress 2014).
+</li><li>
+An author can still sue after a work is edited if an infringement already happened (TriLaw lawyer in <a href="https://cuoi.tuoitre.vn/son-tung-m-tp-cat-bo-mv-bi-to-dao-nhai-hanh-vi-vi-pham-da-xay-ra-thi-van-co-the-bi-kien-20260609173819498.htm" target="_blank" rel="noopener noreferrer">Tuổi Trẻ Cười</a>).
+</li><li>
+I did not read or cite the text of the Intellectual Property Law (Luật Sở hữu trí tuệ) itself. <strong><span class="flag nf">[Not checked]</span></strong>
+</li></ul>
+</section>
+<section id="unverified"><h2><span class="em">❓</span>Unverified list</h2>
+<h3>From the deep dive</h3><ul><li>
+<strong>Recording studios:</strong> none named in any credit.
+</li><li>
+<strong>Mixing engineers:</strong> missing for every song except Come My Way.
+</li><li>
+<strong>Arrangers:</strong> missing for Cơn Mưa Ngang Qua, Em Của Ngày Hôm Qua and Âm Thầm Bên Em.
+</li><li>
+<strong>Producer credits:</strong> Qobuz shows Sơn Tùng as "Producer" on the early releases, which conflicts with the YouTube credits. Treat the Qobuz tag as metadata.
+</li><li>
+<strong>Mastering of There's No One At All:</strong> the official credit says Greg Calbi / Steve Fallone; Wikipedia says Chris Gehringer.
+</li><li>
+<strong>Missing MV credits:</strong> no director/crew for Chúng Ta Của Tương Lai or Đừng Làm Trái Tim Anh Đau. Wikipedia's name for the latter is <strong><span class="flag unv">[Unverified]</span></strong>. DOPs and choreographers are missing for most MVs.
+</li><li>
+<strong>Budgets:</strong> none official. The Hãy Trao Cho Anh figure of about US$3M is <strong><span class="flag rum">[Rumour]</span></strong>.
+</li><li>
+<strong>Marvey Muzique "Grammy-nominated":</strong> from Tiền Phong only.
+</li><li>
+<strong>+84 fashion label:</strong> never confirmed as launched.
+</li><li>
+<strong>Sky fan club:</strong> no data on its structure; no diaspora or overseas listener data; no YouTube geography.
+</li><li>
+<strong>Spotify gaps:</strong> Making My Way and the studio Chạy Ngay Đi are missing from Kworb's stream list.
+</li><li>
+<strong>YouTube ranking:</strong> covers only the MVs checked, not every upload. The early MVs on the old channel have low counts; the original uploads may live elsewhere <strong><span class="flag unv">[Unverified]</span></strong>.
+</li></ul><h3>From tutorials &amp; plagiarism</h3><ul><li>
+No English-language producer breakdown of Sơn Tùng tracks; no Triple D or Marvey Muzique production walkthrough.
+</li><li>
+The Onionn WMW analysis is a third-party re-upload; I could not find an original upload.
+</li><li>
+Có Chắc Yêu Là Đây vs "Lucky": no public resolution found.
+</li><li>
+GC settlement amount (US$100K): <strong><span class="flag rum">[Rumour]</span></strong>.
+</li><li>
+No quote from Sơn Tùng or M-TP using "coincidence" (trùng hợp).
+</li><li>
+No statement from Onionn on the 2021 claims.
+</li><li>
+Lê Giang case: no lawsuit or settlement reported in the sources read.
+</li><li>
+I did not read the Vietnamese IP law text directly.
+</li></ul>
+</section>
+</main></div>
+<footer>Combined from starter-brief.md, deep-dive.md and tutorials-plagiarism.md · research compiled 21 Oct 2026</footer>
+<script>const ls=[...document.querySelectorAll('nav.toc a')];const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){ls.forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}})},{rootMargin:'-30% 0px -60% 0px'});document.querySelectorAll('main section').forEach(s=>ob.observe(s));</script></body></html>
